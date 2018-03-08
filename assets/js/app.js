@@ -1,9 +1,13 @@
 function initMap(){
     // google map
     var geocoder = new google.maps.Geocoder();
-    var address = "7772 22nd St Westminster CA 92683";   
+    //var address = "7772 22nd St Westminster CA 92683";
 
-    geocoder.geocode({'address': address}, displayMap)
+    var address = ["7772 22nd St Westminster CA 92683", "9191 Cerritos Ave Anaheim CA 92804"];
+
+    for(var i = 0; i < address.length; i++){
+        geocoder.geocode({'address': address[i]}, displayMap)
+    }
 }
 
 function displayMap(results, status){
@@ -22,14 +26,33 @@ function displayMap(results, status){
 
 function drawMap(coordinates){
     var options = {
-        zoom : 14, // zoom out
+        zoom : 10, // zoom in
         center: {lat: coordinates[0], lng: coordinates[1]}
-    }
+    }   
 
     var mapTag = $("#map");    
-    var map = new google.maps.Map(mapTag[0], options);    
+    var map = new google.maps.Map(mapTag[0], options); 
+    
+    var marker = new google.maps.Marker({
+        position: {lat: coordinates[0], lng: coordinates[1]},
+        map: map
+    });
+
+    var infoWindow = new google.maps.InfoWindow({
+        content: '<h1>Hello</h1>'
+    })
+
+    marker.addListener('click', function(){
+        infoWindow.open(map, marker)
+    })
 }
 
+function addmarker(coordinates){
+    var marker = new google.maps.Marker({
+        position: {lat: coordinates[0], lng: coordinates[1]},
+        map: map
+    });
+}
 
 $(document).ready(function () {
     $('select').material_select();

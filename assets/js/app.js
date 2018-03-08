@@ -1,35 +1,35 @@
-<<<<<<< HEAD
 function initMap(){
-    
-
     // google map
     var geocoder = new google.maps.Geocoder();
-    var address = "48834";
+    var address = "7772 22nd St Westminster CA 92683";   
 
-
-    geocoder.geocode({'address': address}, function(results, status){
-        if (status == google.maps.GeocoderStatus.OK) {
-            var latitude = results[0].geometry.location.lat();
-            var longitude = results[0].geometry.location.lng();
-            console.log(latitude);
-            console.log(longitude);
-
-            var options = {
-                zoom : 8,
-                center: {lat: latitude, lng: longitude}
-            }
-
-            var map = new google.maps.Map(document.getElementById('map'), options);
-
-          }
-    })
-
-    
-
-    
-
-
+    geocoder.geocode({'address': address}, displayMap)
 }
+
+function displayMap(results, status){
+    var coordinatesValue = [];
+    if(status == google.maps.GeocoderStatus.OK){
+        var latitude = results[0].geometry.location.lat();
+        var longtitude = results[0].geometry.location.lng();
+        console.log(latitude);
+        console.log(longtitude);
+        
+        coordinatesValue.push(latitude, longtitude);        
+    }
+    
+    drawMap(coordinatesValue);
+}
+
+function drawMap(coordinates){
+    var options = {
+        zoom : 14, // zoom out
+        center: {lat: coordinates[0], lng: coordinates[1]}
+    }
+
+    var mapTag = $("#map");    
+    var map = new google.maps.Map(mapTag[0], options);    
+}
+
 
 $(document).ready(function () {
     $('select').material_select();
@@ -51,8 +51,4 @@ $(document).ready(function () {
     })
 
 
-=======
-$(document).ready(function () {
-    $('select').material_select();
->>>>>>> 139c528782cacdf1fa43baf86c792c60e43582ac
 });

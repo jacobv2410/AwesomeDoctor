@@ -6,7 +6,8 @@
     <title>Awesome Doctor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Materialize css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" /> 
 </head>
 
     <body>
@@ -33,6 +34,7 @@
         
         <!-- Form -->
         <div class="container">
+            <div id="map"></div>
             <div class="row">
                 <form class="col s12">
                     <div class="row">
@@ -53,6 +55,7 @@
             </div>
         </div>
 
+        
         <!-- Results -->
         <div class="container">
             <div class="row">
@@ -166,6 +169,8 @@
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEB-YmeWU9GL9M6Py9llH6Cz1YyXX4F8M&callback=initMap"
+    async defer></script>
 
 </body>
 </html>

@@ -7,15 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Materialize css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <!-- Materialize JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+   
 </head>
 
     <body>
-        <!-- dlfhdakffjd -->
-        <!-- HOW THE FORK DOES THIS WORK MINH -->
-        <!-- ReTest -->
-
         <nav class="light-blue lighten-1" role="navigation">
             <div class="nav-wrapper container">
                 <a id="logo-container" href="#" class="brand-logo">Logo</a>
@@ -41,11 +36,32 @@
                 <br>
                 <h1 class="header center orange-text">Awesome Doctor</h1>
                 <div class="row center">
-                    <h5 class="header col s12 light"> '' ''</h5>
+                    <h5 class="header col s12 light"> 'slogan'</h5>
                 </div>
-                <div class="row center">
-                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-                </div>
+                <div class="row">
+                    <form class="col s12">
+                            <div class="input-field col s3">
+                                <input placeholder="Location" id="location" type="text","number" class="validate">
+                            </div>
+                            <div class="input-field col s3">
+                                <input placeholder="Condition" id="condition" type="text" class="validate">
+                            </div>
+                            <div class="input-field col s3">
+                                <select>
+                                    <option value="" disabled selected>Distance from you:</option>
+                                    <option value="1">5 mi</option>
+                                    <option value="2">10 mi</option>
+                                    <option value="3">20 mi</option>
+                                    <option value="4">25 mi</option>
+                                    <option value="5">30 mi</option>
+                                </select>
+                            </div>
+                            <div class="col s3">
+                                <a href="results.html" id="search" class="btn-large waves-effect waves-light orange">search</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>        
                 <br>
                 <br>
     
@@ -158,8 +174,9 @@
 
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="assets/js/app.js"></script>
 
 </body>
 </html>

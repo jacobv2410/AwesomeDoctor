@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function initMap(){
     
 
@@ -50,4 +51,8 @@ $(document).ready(function () {
     })
 
 
+=======
+$(document).ready(function () {
+    $('select').material_select();
+>>>>>>> 139c528782cacdf1fa43baf86c792c60e43582ac
 });

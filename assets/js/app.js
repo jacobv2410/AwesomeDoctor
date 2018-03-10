@@ -106,10 +106,19 @@ var config = {
                 var firstName = resp.data[i].profile.first_name + " "         
                 var lastName = resp.data[i].profile.last_name         
                 var title = resp.data[i].profile.title          
-                var image = resp.data[i].profile.image_url       
+                var image = resp.data[i].profile.image_url  
+                var specialty = resp.data[i].specialties[0].actor 
+                var street = resp.data[i].practices[0].visit_address.street    
+                var street2 = resp.data[i].practices[0].visit_address.street2    
+                var city = resp.data[i].practices[0].visit_address.city   
+                var zip = resp.data[i].practices[0].visit_address.zip   
+                var state = resp.data[i].practices[0].visit_address.state  
+                var lat = resp.data[i].practices[0].visit_address.lat  
+                var lon = resp.data[i].practices[0].visit_address.lon  
                 console.log(resp.data[i].profile.first_name)
                 console.log(resp.data[i].profile.last_name)
-                $("#doctorData").append("<li><div class='collapsible-header' data-value='"+i+"'><img style='border-radius: 50%;' src='"+ image +"'><h5>"+ firstName + lastName +"</h5></div><div class='collapsible-body'></div></li>")
+                console.log(resp.data[i].profile.title)
+                $("#doctorData").append("<li><div class='collapsible-header' data-value='"+i+"' data-lat='"+ lat + "' data-lon='"+ lon +"'><div class='s3'><img style='border-radius: 50%; float:right' src='"+ image +"'></div><div class='s9'><h5>"+ firstName + lastName + "  " + title + "</h5><br /><p>"+ specialty +"</p><p>"+ street + " " + street2 + "," + city + ", " + state + zip +"</p></div></div><div class='collapsible-body'></div></li>")
             }
           $("#firstEntry").append(firstName, lastName)
         }).catch(function(err){

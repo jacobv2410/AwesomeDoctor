@@ -1,13 +1,23 @@
-/* #map {
-    height: 100%;
+#map {
+    height: 400px;
+    width: 50%;
+}
+
+
+/* body {
+    background:
 } */
 
+.nav-wrapper {
+    background: blueviolet;
+    width: 85%;
+}
 
-/* Optional: Makes the sample page fill the window. */
+.logo {
+    height: 100px;
+    width: 100px;
+}
 
-html,
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+.nav-title {
+    height: 50px;
 }

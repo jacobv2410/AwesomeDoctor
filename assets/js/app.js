@@ -64,51 +64,53 @@ $(document).ready(function() {
     var doctorApi = "bbc8405334e9bfa31c8a02401fdacfd6";
     var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&skip=2&limit=10&user_key=' + doctorApi;
 
+
+
+    var doctorArray = [];
     $.ajax({
         url: resource_url,
         method: 'GET'
     }).then(function(resp) {
         console.log(resp);
 
-        // get all 10 doctor lat and long
-
-        var doctorArray = resp.data;
+        doctorArray = resp.data;
         //console.log(doctorArray);
 
         for (var i = 0; i < doctorArray.length; i++) {
-            //console.log(doctorArray[i]);
+
             var profile = doctorArray[i].profile;
-            console.log(profile);
             var firstName = profile.first_name;
-            //console.log(firstName);
             var lastName = profile.last_name;
-            //console.log(lastName);
             var image = profile.image_url;
+            var title = profile.title;
+            var bio = profile.bio;
+            console.log(bio);
 
-
-            // each doctor, create a row
-            var row = $("<div class='row' data-index='" + i + "'>");
-            //console.log(row);
-
-            // create 3 cols s2, s5 and s5 under row
-            //var cols2 = "<div class=''col s2><a href='https://placeholder.com'><img class=''>" // need to test later
-            //image_url
-            //var cols2 = $("<div class=''col s2><a href='https://placeholder.com'><img class='responsive-img' src='http://via.placeholder.com/200x200'></a>")
-            var cols2 = $("<div class=''col s2><a href='https://placeholder.com'><img class='responsive-img' src='" + image + "'></a>")
-            row.append(cols2);
-
-            //var cols5
-
-
-            $("#doctor-rows").append(row);
-
+            var li = $("<li class='item' data-index='" + i + "'><div class='collapsible-header'>" + firstName + " " + lastName + ", " + title + "</div><div class='collapsible-body body-item'><p></p></div>");
+            $("#doctor-rows").append(li);
         }
-
-
-
     }).catch(function(err) {
         console.error(err);
     })
+
+
+    $(document).on("click", ".item", function() {
+        var index = $(this).attr("data-index");
+        console.log(index);
+
+        var bio = doctorArray[index].profile.bio;
+
+        //console.log(doctorArray[index].profile.bio);
+
+        var content = $(this).find("p");
+
+        content.text(bio);
+
+        // add google map in here
+
+
+    });
+
 
 
 });

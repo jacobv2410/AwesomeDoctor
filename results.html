@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <!-- Nav -->
     <nav class="light-blue lighten-1" role="navigation">
         <div class="nav-wrapper container">
@@ -34,92 +33,36 @@
         </div>
     </nav>
 
+    <!-- Form -->
+    <div class="container">
+        <div id="map"></div>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input id="search1" type="text" class="validate">
+                        <label for="search1">Search 1</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="search2" type="text" class="validate">
+                        <label for="search2">Search 2</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="search3" type="text" class="validate">
+                        <label for="search3">Search 3</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
 
     <!-- Results -->
     <div class="container">
         <div class="row">
             <div class="col s6">
-                <ul class="collapsible" data-collapsible="accordion">
-                    <li>
-                        <div class="collapsible-header">
-                            1
-                        </div>
-                        <div class="collapsible-body">
-                            <p>1 - Body Text</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            2
-                        </div>
-                        <div class="collapsible-body">
-                            <p>2 - Body Text</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            3
-                        </div>
-                        <div class="collapsible-body">
-                            <p>3 - Body Text</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            4
-                        </div>
-                        <div class="collapsible-body">
-                            <p>4 - Body Text</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            5
-                        </div>
-                        <div class="collapsible-body">
-                            <p>5 - Body Text</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            6
-                        </div>
-                        <div class="collapsible-body">
-                            <p>6 - Body Text</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            7
-                        </div>
-                        <div class="collapsible-body">
-                            <p>7 - Body Text</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            8
-                        </div>
-                        <div class="collapsible-body">
-                            <p>8 - Body Text</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            9
-                        </div>
-                        <div class="collapsible-body">
-                            <p>9 - Body Text</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                            10
-                        </div>
-                        <div class="collapsible-body">
-                            <p>10 - Body Text</p>
-                        </div>
-                    </li>
+                <ul class="collapsible" id="doctor-rows" data-collapsible="accordion">
+
                 </ul>
             </div>
         </div>
@@ -127,65 +70,10 @@
             <div class="col s6">
                 <!-- Right Half of Page -->
             </div>
-            </form>
         </div>
     </div>
 
-    <div id="map"></div>
-
-    <!-- Results -->
-    <div class="container">
-        <div class="row" id="doctor-rows">
-            <!-- <div class="col s12">
-                
-            </div> -->
-            <!-- First Entry -->
-            <div class="row">
-                <div class="col s2">
-                    <a href="https://placeholder.com"><img class="responsive-img" src="http://via.placeholder.com/200x200"></a>
-                </div>
-                <div class="col s5">
-                    <h3>Doctor Name</h3>
-                    <h6>position</h6>
-                    <p>123 Location Ave, Irvine CA, 45678</p>
-                </div>
-                <div class="col s5">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. A, neque quos. Veniam, rem enim. Nulla voluptatibus perferendis omnis quaerat necessitatibus, ipsa voluptatum vitae quae quod officia ducimus cumque consectetur ratione!
-                </div>
-            </div>
-            <!--  -->
-            <!-- Second Entry -->
-            <div class="row">
-                <div class="col s2">
-                    <a href="https://placeholder.com"><img class="responsive-img" src="http://via.placeholder.com/200x200"></a>
-                </div>
-                <div class="col s5">
-                    <h3>Doctor Name</h3>
-                    <h6>position</h6>
-                    <p>123 Location Ave, Irvine CA, 45678</p>
-                </div>
-                <div class="col s5">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste officiis voluptatibus ad pariatur voluptatum facere dolorum excepturi reiciendis fuga amet? Placeat rem laboriosam, alias nulla quos quibusdam veniam blanditiis. Reiciendis.
-                </div>
-            </div>
-            <!--  -->
-            <!-- Third Entry -->
-            <div class="row">
-                <div class="col s2">
-                    <a href="https://placeholder.com"><img class="responsive-img" src="http://via.placeholder.com/200x200"></a>
-                </div>
-                <div class="col s5">
-                    <h3>Doctor Name</h3>
-                    <h6>position</h6>
-                    <p>123 Location Ave, Irvine CA, 45678</p>
-                </div>
-                <div class="col s5">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. In recusandae repudiandae sit consequuntur ex dignissimos iste sed, aperiam obcaecati id reiciendis fugit. Perspiciatis numquam repudiandae, ex a quisquam eos tempora.
-                </div>
-            </div>
-            <!--  -->
-        </div>
-    </div>
+    <!-- <div id="map-google"></div> -->
 
     <!-- Footer -->
     <footer class="page-footer amber accent-3">
@@ -245,9 +133,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="assets/js/app1.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEB-YmeWU9GL9M6Py9llH6Cz1YyXX4F8M" defer></script>
-    <script type="text/javascript" src="assets/js/app.js"></script> -->
-
 
 </body>
 

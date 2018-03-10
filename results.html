@@ -60,20 +60,11 @@
     <!-- Results -->
     <div class="container">
         <div class="row">
-            <div class="col s6">
-                <ul class="collapsible" id="doctor-rows" data-collapsible="accordion">
-
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s6">
-                <!-- Right Half of Page -->
+            <div class="col s12">
+                <ul class="collapsible" id="doctorData" data-collapsible="accordian"></ul>
             </div>
         </div>
     </div>
-
-    <!-- <div id="map-google"></div> -->
 
     <!-- Footer -->
     <footer class="page-footer amber accent-3">
@@ -123,8 +114,6 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                Made by
-                <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
             </div>
         </div>
     </footer>
@@ -133,8 +122,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="assets/js/app1.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEB-YmeWU9GL9M6Py9llH6Cz1YyXX4F8M" defer></script>
+    <script src="assets/js/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEB-YmeWU9GL9M6Py9llH6Cz1YyXX4F8M&callback=initMap" async defer></script>
+    <!-- Firebase Database Link -->
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 
 </body>
 

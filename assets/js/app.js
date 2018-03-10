@@ -1,62 +1,94 @@
-// function displayMap(results, status) {
+// initializing firebase
+$(document).ready(function() {
 
-//     if (status == google.maps.GeocoderStatus.OK) {
-//         var latitude = results[0].geometry.location.lat();
-//         var longtitude = results[0].geometry.location.lng();
-//         console.log(latitude);
-//         console.log(longtitude);
+    var config = {
+        apiKey: "AIzaSyCZFgxlm7OYDtYudao20tc-24xjNhnPUa8",
+        authDomain: "awesomedoctor-907ea.firebaseapp.com",
+        databaseURL: "https://awesomedoctor-907ea.firebaseio.com",
+        projectId: "awesomedoctor-907ea",
+        storageBucket: "awesomedoctor-907ea.appspot.com",
+        messagingSenderId: "563734361620"
+    };
+    firebase.initializeApp(config);
 
-//         return { latitude, longtitude };
-//     }
+    var database = firebase.database();
 
-//     //     drawMap(coordinatesValue);
-// }
+    // Button for adding Trains
+    $("#searchBtn").on("click", function() {
 
-// function drawMap(coordinates) {
-//     var options = {
-//         zoom: 10, // zoom in
-//         center: { lat: coordinates[0], lng: coordinates[1] }
-//     }
+        // Grabs user input and assign to variables
+        var location = $("#location-input").val().trim();
+        var symptoms = $("#symptoms-input").val().trim();
+        var distanceFromLocation = $(".materials-icons").val().trim();
 
-//     var mapTag = $("#map");
-//     var map = new google.maps.Map(mapTag[0], options);
 
-//     var marker = new google.maps.Marker({
-//         position: { lat: coordinates[0], lng: coordinates[1] },
-//         map: map
-//     });
+        // Test for variables entered
+        console.log(location);
+        console.log(symptoms);
+        console.log(distanceFromLocation);
 
-//     var infoWindow = new google.maps.InfoWindow({
-//         content: '<h1>Hello</h1>'
-//     })
 
-//     marker.addListener('click', function() {
-//         infoWindow.open(map, marker)
-//     })
-// }
+        // pushing info to firebase and storing it
+        firebase.database().ref().push({
+            location: location,
+            symptoms: symptoms,
+            distanceFromLocation: distanceFromLocation,
+        })
 
-// function addmarker(coordinates) {
-//     var marker = new google.maps.Marker({
-//         position: coords,
-//         map: map,
-//     });
-// }
+        // clear text-boxes
+        $("#location-input").val("");
+        $("#symptoms-input").val("");
+        $(".materials-icons").val("");
+
+
+        // Prevents page from refreshing
+        // return false;
+    });
+    firebase.database().ref().on("child_added", function(childSnapshot, prevChildKey) {
+
+        console.log(childSnapshot.val());
+        console.log(location);
+        console.log(symptoms);
+    });
+});
+
+
+
+function initMap() {
+    // google map
+    var geocoder = new google.maps.Geocoder();
+    var address = "7772 22nd St Westminster CA 92683";
+
+    geocoder.geocode({ 'address': address }, displayMap)
+}
+
+function displayMap(results, status) {
+    var coordinatesValue = [];
+    if (status == google.maps.GeocoderStatus.OK) {
+        var latitude = results[0].geometry.location.lat();
+        var longtitude = results[0].geometry.location.lng();
+        console.log(latitude);
+        console.log(longtitude);
+
+        coordinatesValue.push(latitude, longtitude);
+    }
+
+    drawMap(coordinatesValue);
+}
+
+function drawMap(coordinates) {
+    var options = {
+        zoom: 14, // zoom out
+        center: { lat: coordinates[0], lng: coordinates[1] }
+    }
+
+    var mapTag = $("#map");
+    var map = new google.maps.Map(mapTag[0], options);
+}
+
 
 $(document).ready(function() {
-    "use strict";
-    // var map;
-
-    // function initMap() {
-    //     var options = {
-    //         zoom: 8,
-    //         //center:
-    //     }
-    // }
-
-
-    // initMap();
-
-    // $('select').material_select();
+    $('select').material_select();
 
 
 
@@ -64,53 +96,34 @@ $(document).ready(function() {
     var doctorApi = "bbc8405334e9bfa31c8a02401fdacfd6";
     var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&skip=2&limit=10&user_key=' + doctorApi;
 
-
-
-    var doctorArray = [];
     $.ajax({
         url: resource_url,
         method: 'GET'
     }).then(function(resp) {
         console.log(resp);
-
-        doctorArray = resp.data;
-        //console.log(doctorArray);
-
-        for (var i = 0; i < doctorArray.length; i++) {
-
-            var profile = doctorArray[i].profile;
-            var firstName = profile.first_name;
-            var lastName = profile.last_name;
-            var image = profile.image_url;
-            var title = profile.title;
-            var bio = profile.bio;
-            console.log(bio);
-
-            var li = $("<li class='item' data-index='" + i + "'><div class='collapsible-header'>" + firstName + " " + lastName + ", " + title + "</div><div class='collapsible-body body-item'><p></p></div>");
-            $("#doctor-rows").append(li);
+        // console.log(resp.data.length)
+        for (var i = 0; i < resp.data.length; i++) {
+            var firstName = resp.data[i].profile.first_name + " "
+            var lastName = resp.data[i].profile.last_name
+            var title = resp.data[i].profile.title
+            var image = resp.data[i].profile.image_url
+            var specialty = resp.data[i].specialties[0].actor
+            var street = resp.data[i].practices[0].visit_address.street
+            var street2 = resp.data[i].practices[0].visit_address.street2
+            var city = resp.data[i].practices[0].visit_address.city
+            var zip = resp.data[i].practices[0].visit_address.zip
+            var state = resp.data[i].practices[0].visit_address.state
+            var lat = resp.data[i].practices[0].visit_address.lat
+            var lon = resp.data[i].practices[0].visit_address.lon
+            console.log(resp.data[i].profile.first_name)
+            console.log(resp.data[i].profile.last_name)
+            console.log(resp.data[i].profile.title)
+            $("#doctorData").append("<li><div class='collapsible-header' data-value='" + i + "' data-lat='" + lat + "' data-lon='" + lon + "'><div class='s3'><img style='border-radius: 50%; float:right' src='" + image + "'></div><div class='s9'><h5>" + firstName + lastName + "  " + title + "</h5><br /><p>" + specialty + "</p><p>" + street + " " + street2 + "," + city + ", " + state + zip + "</p></div></div><div class='collapsible-body'></div></li>")
         }
+        $("#firstEntry").append(firstName, lastName)
     }).catch(function(err) {
         console.error(err);
     })
-
-
-    $(document).on("click", ".item", function() {
-        var index = $(this).attr("data-index");
-        console.log(index);
-
-        var bio = doctorArray[index].profile.bio;
-
-        //console.log(doctorArray[index].profile.bio);
-
-        var content = $(this).find("p");
-
-        content.text(bio);
-
-        // add google map in here
-
-
-    });
-
 
 
 });

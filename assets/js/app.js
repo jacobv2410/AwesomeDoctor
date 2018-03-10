@@ -109,7 +109,11 @@ var config = {
                 var image = resp.data[i].profile.image_url  
                 var specialty = resp.data[i].specialties[0].actor 
                 var street = resp.data[i].practices[0].visit_address.street    
-                var street2 = resp.data[i].practices[0].visit_address.street2    
+                var street2 = resp.data[i].practices[0].visit_address.street2 
+                // if (resp.data[i].practices[0].visit_address.street2 == "undefined") {
+                //   street2 = ""
+                // }  
+                // else {street2 = resp.data[i].practices[0].visit_address.street2}
                 var city = resp.data[i].practices[0].visit_address.city   
                 var zip = resp.data[i].practices[0].visit_address.zip   
                 var state = resp.data[i].practices[0].visit_address.state  

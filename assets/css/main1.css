@@ -22,3 +22,6 @@ This one is used for result.html
 #copyright {
     text-align: center;
 }
+#navlist .list {
+    display: inline;
+    }

@@ -28,7 +28,9 @@
 #copyright {
     text-align: center;
 }
-/* .doctor-image {
-    height: 100px;
-    width: 100px;
-} */
+#navlist .list {
+display: inline;
+/* list-style-type: none;
+padding-right: 20px;
+float: left; */
+}

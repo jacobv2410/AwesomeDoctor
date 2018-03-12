@@ -61,7 +61,7 @@ $(document).ready(function() {
 
     // doctor api
     var doctorApi = "bbc8405334e9bfa31c8a02401fdacfd6";
-    var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&skip=2&limit=50&user_key=' + doctorApi;
+    var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&skip=2&limit=100&user_key=' + doctorApi;
 
     var doctorArray = [];
 
@@ -77,23 +77,24 @@ $(document).ready(function() {
             var lastName = doctorArray[i].profile.last_name
             var title = doctorArray[i].profile.title
             var image = doctorArray[i].profile.image_url
+            var phoneNum = doctorArray[i].practices[0].phones[0].number
 
             // this is an array
-            var specialties = doctorArray[i].specialties[0].actor;
+            var specialties = convertArrayObjectToString(doctorArray[i].specialties);
             
             //var li = $("<li class='item' data-index='" + i + "'data-lat='" + lat + "' data-lon='" + lon + "' data-bio='" + bio + "'><div class='collapsible-header'>" + firstName + " " + lastName + ", " + title + "</div><div class='collapsible-body body-item'><div class='row'><img src='" + image + "'><p></p></div><div id='map'></div></div>");
             //var li = $("<li class='item' data-index='" + i + "'data-lat='" + lat + "' data-lon='" + lon + "' data-bio='" + bio + "'><div class='collapsible-header'>" + firstName + " " + lastName + ", " + title + "</div><div class='collapsible-body body-item'><div class='row'><div class='col md-3 sm-12'><img src='" + image + "'></div><p></p></div><div id='map'></div></div>");
-            var li = $("<li class='item' data-index='" + i + "'><div class='collapsible-header title-header'>" + firstName + " " + lastName + ", " + title + " - Specialities: " + specialties + "</div><div class='collapsible-body body-item'><div class='row'><div class='col m2 s12'><img class='responsive-img avatar' src='" + image + "'></div><div class='col m10 s12 bio'></div></div><div id='map'></div></div>");
+            var li = $("<li class='item' data-index='" + i + "'><div class='collapsible-header title-header'>" + firstName + " " + lastName + ", " + title + " - Specialities: " + specialties + "; -" + "Phone Number:" + phoneNum + "</div><div class='collapsible-body body-item'><div class='row'><div class='col m2 s12'><img class='responsive-img avatar' src='" + image + "'></div><div class='col m10 s12 bio'></div></div><div id='map'></div></div>");
 
-            var specialtyInput = $("#specialties-input").val()
-            // var specialty = 
+            // var specialtyInput = $("#specialties-input").val()
+            // // var specialty = 
             
-            if (specialtyInput == specialties) {
+            // if (specialtyInput == specialties) {
+                //     console.log()
+                // }
+                // else $("#doctorData").append(li);
+                
                 $("#doctorData").append(li);
-                console.log()
-            }
-            else $("#doctorData").append(li);
-            
             
             
         }

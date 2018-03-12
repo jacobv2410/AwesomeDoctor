@@ -61,34 +61,92 @@ $(document).ready(function() {
     var doctorApi = "bbc8405334e9bfa31c8a02401fdacfd6";
     var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&skip=2&limit=10&user_key=' + doctorApi;
 
+    var doctorArray = [];
+
     $.ajax({
         url: resource_url,
         method: 'GET'
     }).then(function(resp) {
         console.log(resp);
-        // console.log(resp.data.length)
-        for (var i = 0; i < resp.data.length; i++) {
-            var firstName = resp.data[i].profile.first_name + " "
-            var lastName = resp.data[i].profile.last_name
-            var title = resp.data[i].profile.title
-            var image = resp.data[i].profile.image_url
-            var specialty = resp.data[i].specialties[0].actor
-            var street = resp.data[i].practices[0].visit_address.street
-            var street2 = resp.data[i].practices[0].visit_address.street2
-            var city = resp.data[i].practices[0].visit_address.city
-            var zip = resp.data[i].practices[0].visit_address.zip
-            var state = resp.data[i].practices[0].visit_address.state
-            var lat = resp.data[i].practices[0].visit_address.lat
-            var lon = resp.data[i].practices[0].visit_address.lon
-            console.log(resp.data[i].profile.first_name)
-            console.log(resp.data[i].profile.last_name)
-            console.log(resp.data[i].profile.title)
-            $("#doctorData").append("<li><div class='collapsible-header' data-value='" + i + "' data-lat='" + lat + "' data-lon='" + lon + "'><div class='s3'><img style='border-radius: 50%; float:right' src='" + image + "'></div><div class='s9'><h5>" + firstName + lastName + "  " + title + "</h5><br /><p>" + specialty + "</p><p>" + street + " " + street2 + "," + city + ", " + state + zip + "</p></div></div><div class='collapsible-body'></div></li>")
+        doctorArray = resp.data;
+
+        for (var i = 0; i < doctorArray.length; i++) {
+            var firstName = doctorArray[i].profile.first_name
+            var lastName = doctorArray[i].profile.last_name
+            var title = doctorArray[i].profile.title
+            var image = doctorArray[i].profile.image_url
+
+            // this is an array
+            var specialties = convertArrayObjectToString(doctorArray[i].specialties);
+
+            //var li = $("<li class='item' data-index='" + i + "'data-lat='" + lat + "' data-lon='" + lon + "' data-bio='" + bio + "'><div class='collapsible-header'>" + firstName + " " + lastName + ", " + title + "</div><div class='collapsible-body body-item'><div class='row'><img src='" + image + "'><p></p></div><div id='map'></div></div>");
+            //var li = $("<li class='item' data-index='" + i + "'data-lat='" + lat + "' data-lon='" + lon + "' data-bio='" + bio + "'><div class='collapsible-header'>" + firstName + " " + lastName + ", " + title + "</div><div class='collapsible-body body-item'><div class='row'><div class='col md-3 sm-12'><img src='" + image + "'></div><p></p></div><div id='map'></div></div>");
+            var li = $("<li class='item' data-index='" + i + "'><div class='collapsible-header title-header'>" + firstName + " " + lastName + ", " + title + " - Specialities: " + specialties + "</div><div class='collapsible-body body-item'><div class='row'><div class='col m2 s12'><img class='responsive-img avatar' src='" + image + "'></div><div class='col m10 s12 bio'></div></div><div id='map'></div></div>");
+
+
+
+
+            $("#doctorData").append(li);
+
+
         }
-        $("#firstEntry").append(firstName, lastName)
+        // $("#firstEntry").append(firstName, lastName)
     }).catch(function(err) {
         console.error(err);
     })
 
+    $(document).on("click", ".item", function() {
+        var index = $(this).attr("data-index");
+        var bio = doctorArray[index].profile.bio;
+        var content = $(this).find(".bio");
+        // content.css("color", "red");
+
+        content.text(bio);
+
+        // add google map in here
+
+        // find div map in here
+        var mapTag = $(this).find("#map");
+        console.log(mapTag);
+
+        // var latitude = parseFloat($(this).attr("data-lat"));
+        // console.log(latitude)
+        // var long = parseFloat($(this).attr("data-lon"));
+        // console.log(long)
+
+        var latitude = doctorArray[index].practices[0].visit_address.lat;
+        console.log(latitude)
+        var longtitude = doctorArray[index].practices[0].visit_address.lon;
+        console.log(longtitude)
+
+        // map options
+        var options = {
+            zoom: 10, // zoom in
+            center: { lat: latitude, lng: longtitude },
+            zoomControl: false, // disable the zoom control
+            mapTypeControl: false, // disable map type control to switch between map and satellite
+            fullscreenControl: false, // disable full screen control
+            streetViewControl: false // disable street view control
+        }
+
+        var map = new google.maps.Map(mapTag[0], options);
+
+        var marker = new google.maps.Marker({
+            position: { lat: latitude, lng: longtitude },
+            map: map
+        });
+
+
+    });
+
+    function convertArrayObjectToString(obj) {
+        // debugger;
+        var value = []
+        for (var i = 0; i < obj.length; i++) {
+            value.push(obj[i].name);
+        }
+
+        return value.join(', ');
+    }
 
 });

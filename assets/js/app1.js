@@ -26,8 +26,6 @@ $(document).ready(function() {
             coordinatesValue.push(latitude, longtitude);
         }
 
-        //getMapOptions(coordinatesValue);
-
         var options = {
             zoom: 14, // zoom out
             center: { lat: coordinates[0], lng: coordinates[1] }

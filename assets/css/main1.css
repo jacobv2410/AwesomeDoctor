@@ -1,0 +1,22 @@
+/*/
+This one is used for result.html
+
+*/
+
+#map {
+    height: 400px;
+    width: 100%;
+    padding-top: 30px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.bio {
+    text-align: justify;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row .col {
+    padding: 0.1rem;
+}

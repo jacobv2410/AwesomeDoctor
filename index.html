@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,76 +9,93 @@
     <!-- Materialize css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css">
 </head>
 
-    <body>
-        <nav class="light-blue lighten-1" role="navigation">
-            <div class="nav-wrapper container">
-                <a id="logo-container" href="#" class="brand-logo">Awesome Doctor</a>
-                <ul class="right hide-on-med-and-down">
-                    <li>
-                        <a href="#">Navbar Link</a>
-                    </li>
-                </ul>
-    
-                <ul id="nav-mobile" class="side-nav">
-                    <li>
-                        <a href="#">Navbar Link</a>
-                    </li>
-                </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse">
-                    <i class="material-icons">menu</i>
-                </a>
+<body>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <div href="index.html" class="brand-logo">
+                <span>
+                    <a href="index.html"><img src="https://fontmeme.com/permalink/180312/556bf846603dee7a5bcf3c595ac4d359.png" alt="quattrocento-font" border="0"></a>   
+                    <a href="index.html"><img src="https://fontmeme.com/permalink/180312/95e2d4578b36d9bb5883add027d260d1.png" alt="stardust-adventure-font" border="0"></a>
+                    
+                </span>
+                <!-- <img class='logo' src='assets/css/download.png'> -->
+                <!-- <class='nav-title '>Awesome Doctor</span> -->
             </div>
-        </nav>
-        <div class="section no-pad-bot" id="index-banner">
-            <div class="container">
-                <br>
-                <br>
-                <h2 class="header center orange-text">Better Doctors. <span style="color:blueviolet">Better Health.</span> Better You.</h2>
-                <div class="row center">
-                    <h5 class="header col s12 light">Find the Doctors You Need, When You Need Them.</h5>
-                </div>
-                <div class="row">
-                    <form class="col s12">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">add_location</i>
-                                <input type="text" id="location-input" class="location">
-                                <label for="location-input">Location</label>
-                            </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">priority_high</i>
-                                <input type="text" id="symptoms-input" class="symptoms">
-                                <label for="symptoms-input">condition/symptoms</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">add_location</i>
-                                <select>
-                                    <option value="" disabled selected>Distance from you:</option>
-                                    <option value="1">5 mi</option>
-                                    <option value="2">10 mi</option>
-                                    <option value="3">20 mi</option>
-                                    <option value="4">25 mi</option>
-                                    <option value="5">30 mi</option>
-                                </select>
-                            </div>
-                            <div class="col s6">
-                                <a href="results.html" id="searchBtn" class="btn-floating btn-large waves-effect waves-panel amber lighten-2"> <i class="material-icons">search</i></a>
-                            </div>
-                        </div>
-                    </form>
-                </div>        
-                <br>
-                <br>
-    
-            </div>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="#">About Us</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav">
+                <li>
+                    <a href="#">Navbar Link</a>
+                </li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
         </div>
-    
-    
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
         <div class="container">
+            <br>
+            <br>
+            <h2 class="header center orange-text">Better Doctors. <span style="color:blueviolet">Better Health.</span> Better You.</h2>
+            <div class="row center">
+                <h5 class="header col s12 light">Find the Doctors You Need, When You Need Them.</h5>
+            </div>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix">priority_high</i>
+                        <input type="text" id="symptoms-input" class="symptoms">
+                        <label for="symptoms-input">condition/symptoms</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix">add_location</i>
+                        <input type="text" id="userLoc" class="form-control">
+                        <label for="location-input">Location</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <i class="material-icons prefix">add_location</i>
+                        <select>
+                                <option value="" disabled selected>Distance from you:</option>
+                                <option value="1">5 mi</option>
+                                <option value="2">10 mi</option>
+                                <option value="3">20 mi</option>
+                                <option value="4">25 mi</option>
+                                <option value="5">30 mi</option>
+                            </select>
+                    </div>
+                    <div class="col s1">
+                        <a href="results.html" id="search" class="btn-floating btn-large waves-effect waves-panel amber lighten-2"> 
+                            <i class="material-icons">search</i>
+                        </a>
+                        <!-- <script>
+                        var resultsWindow = window.open("results.html")
+                        var homePageWindow = window.open(index.html)
+                        $("#search").on("click", function() {
+                            document.write(resultsWindow)
+                        })
+                        $("#search").on("click", function() {
+                            document.write(homePageWindow)
+                        })
+                        </script> -->
+                    </div>
+            </div>
+        </form>
+            <br>
+            <br>
+
+        </div>
+    </div>
+    <div class="container">
             <div class="section">
     
                 <!--   Icon Section   -->
@@ -125,58 +143,60 @@
             <br>
             <br>
         </div>
-    
+
         <footer class="page-footer orange">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">Company Bio</h5>
-                        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would
-                            help support and continue development on this project and is greatly appreciated.</p>
-    
-    
-                    </div>
-                    <div class="col l3 s12">
-                        <h5 class="white-text">Settings</h5>
-                        <ul>
-                            <li>
-                                <a class="white-text" href="#!">Link 1</a>
-                            </li>
-                            <li>
-                                <a class="white-text" href="#!">Link 2</a>
-                            </li>
-                            <li>
-                                <a class="white-text" href="#!">Link 3</a>
-                            </li>
-                            <li>
-                                <a class="white-text" href="#!">Link 4</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col l3 s12">
-                        <h5 class="white-text">Connect</h5>
-                        <ul>
-                            <li>
-                                <a class="white-text" href="#!">Link 1</a>
-                            </li>
-                            <li>
-                                <a class="white-text" href="#!">Link 2</a>
-                            </li>
-                            <li>
-                                <a class="white-text" href="#!">Link 3</a>
-                            </li>
-                            <li>
-                                <a class="white-text" href="#!">Link 4</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-copyright">
                 <div class="container">
+                    <div class="row">
+                        <div class="col l6 s12">
+                            <h5 class="white-text">Company Bio</h5>
+                            <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would
+                                help support and continue development on this project and is greatly appreciated.</p>
+        
+        
+                        </div>
+                        <div class="col l3 s12">
+                            <h5 class="white-text">Settings</h5>
+                            <ul>
+                                <li>
+                                    <a class="white-text" href="#!">Link 1</a>
+                                </li>
+                                <li>
+                                    <a class="white-text" href="#!">Link 2</a>
+                                </li>
+                                <li>
+                                    <a class="white-text" href="#!">Link 3</a>
+                                </li>
+                                <li>
+                                    <a class="white-text" href="#!">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col l3 s12">
+                            <h5 class="white-text">Connect</h5>
+                            <ul>
+                                <li>
+                                    <a class="white-text" href="#!">Link 1</a>
+                                </li>
+                                <li>
+                                    <a class="white-text" href="#!">Link 2</a>
+                                </li>
+                                <li>
+                                    <a class="white-text" href="#!">Link 3</a>
+                                </li>
+                                <li>
+                                    <a class="white-text" href="#!">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </footer>
+                <div class="footer-copyright">
+                    <div class="container" id="copyright">
+                            &copy;
+                            <a class="orange-text text-lighten-3" href="index.html">MIKADO 2018</a>
+                    </div>
+                </div>
+            </footer>
 
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
@@ -187,4 +207,110 @@
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 
 </body>
+
 </html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Awesome Doctor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Materialize css -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css">
+</head>
+
+<body>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container">
+            <div href="#" class="brand-logo">
+                <img class='logo' src='assets/css/download.png'>
+                <!-- <class='nav-title '>Awesome Doctor</span> -->
+            <!-- </div>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="#">About Us</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav">
+                <li>
+                    <a href="#">Navbar Link</a>
+                </li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br>
+            <br>
+            <h2 class="header center orange-text">Better Doctors. <span style="color:blueviolet">Better Health.</span> Better You.</h2>
+            <div class="row center">
+                <h5 class="header col s12 light">Find the Doctors You Need, When You Need Them.</h5>
+            </div>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">priority_high</i>
+                        <input type="text" id="symptoms-input" class="symptoms">
+                        <label for="symptoms-input">condition/symptoms</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">add_location</i>
+                        <input type="text" id="location-input" class="location">
+                        <label for="location-input">Location</label>
+                    </div>
+                    <div class="input-field col s5">
+                        <i class="material-icons prefix">add_location</i>
+                        <select>
+                                <option value="" disabled selected>Distance from you:</option>
+                                <option value="1">5 mi</option>
+                                <option value="2">10 mi</option>
+                                <option value="3">20 mi</option>
+                                <option value="4">25 mi</option>
+                                <option value="5">30 mi</option>
+                            </select>
+                    </div>
+                    <div class="col s1">
+                        <a href="results.html" id="search" class="btn-floating btn-large waves-effect waves-panel amber lighten-2"> <i class="material-icons">search</i></a>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <br>
+
+        </div>
+    </div>
+    <footer class="page-footer copyright orange">
+        <div class="row">
+            <div class="container">
+                &copy;
+                <a class="orange-text text-lighten-3" href="http://materializecss.com">MIKADO 2018</a>
+            </div>
+        </div>
+    </footer> --> 
+
+    <!--  Scripts-->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
+    <!-- Materialize JavaScript -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
+    <!-- <script src="assets/js/app.js"></script> -->
+    <!-- Firebase Database Link -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script> -->
+
+<!-- </body> -->
+
+<!-- </html> -->

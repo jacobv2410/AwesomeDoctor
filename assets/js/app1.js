@@ -1,14 +1,80 @@
-$(document).ready(function() {
-    "use strict";
 
-    /*
-    Google map API
-    */
-
-    function initMap() {
-        // google map
-
-        var geocoder = new google.maps.Geocoder();
+ // Initialize Firebase
+ var config = {
+     apiKey: "AIzaSyCZFgxlm7OYDtYudao20tc-24xjNhnPUa8",
+     authDomain: "awesomedoctor-907ea.firebaseapp.com",
+     databaseURL: "https://awesomedoctor-907ea.firebaseio.com",
+     projectId: "awesomedoctor-907ea",
+     storageBucket: "awesomedoctor-907ea.appspot.com",
+     messagingSenderId: "563734361620"
+    };
+    firebase.initializeApp(config);
+    
+    // Create a variable to reference the database.
+    var database = firebase.database();
+    // Initial Values
+    var name = "";
+    var email = "";
+    var age = 0;
+    var comment = "";
+    // Capture Button Click
+    $("#searchBtn").on("click", function(event) {
+        event.preventDefault();
+        // Grabbed values from text boxes
+        specialist = $("#specialties-input").val().trim();
+        location = $("#location-input").val().trim();
+        distanceFromYou = $("#distanceAway").val().trim();
+        
+        // Code for handling the push
+        database.ref().push({
+            specialist: specialist,
+            location: location,
+            distance: distanceFromYou,
+            
+            dateAdded: firebase.database.ServerValue.TIMESTAMP
+        });
+    });
+    // Firebase watcher + initial loader + order/limit HINT: .on("child_added"
+    database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
+        // storing the snapshot.val() in a variable for convenience
+        var sv = snapshot.val();
+        // Console.loging the last user's data
+        console.log(sv.name);
+        console.log(sv.email);
+        console.log(sv.age);
+        console.log(sv.comment);
+        // Change the HTML to reflect
+        $("#specialties-input").text(sv.specialist);
+        $("#location-input").text(sv.location);
+        $("#distanceAway").text(sv.distance);
+        $("#comment-display").text(sv.comment);
+        // Handle the errors
+    }, function(errorObject) {
+        console.log("Errors handled: " + errorObject.code);
+    });
+    
+    // $('button').on('click',function(){
+        //     var value = $('form').val()
+        //     betterDoctor(value)
+        // })
+        // function betterDoctor(parameters){
+            //     var queryDoctor = 'url string ' + paramters
+            //     $.ajax({
+                //         url: queryDoctor
+                //     }).then(function(resp){
+                    //         console.log(resp)
+                    //     })
+                    // }
+                    /*
+                    Google map API
+                    */
+                        $(document).ready(function() {
+                            "use strict";
+                    
+                    function initMap() {
+                        // google map
+                        
+                        var geocoder = new google.maps.Geocoder();
         var address = "7772 22nd St Westminster CA 92683";
 
         geocoder.geocode({ 'address': address }, getMapOptions)
@@ -40,7 +106,7 @@ $(document).ready(function() {
     */
     // doctor api
     var doctorApi = "bbc8405334e9bfa31c8a02401fdacfd6";
-    var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&skip=2&limit=100&user_key=' + doctorApi;
+    var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&skip=2&limit=10&user_key=' + doctorApi;
 
 
 

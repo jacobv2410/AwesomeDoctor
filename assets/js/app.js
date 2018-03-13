@@ -1,57 +1,60 @@
 // initializing firebase
 $(document).ready(function() {
 
-    var config = {
-        apiKey: "AIzaSyCZFgxlm7OYDtYudao20tc-24xjNhnPUa8",
-        authDomain: "awesomedoctor-907ea.firebaseapp.com",
-        databaseURL: "https://awesomedoctor-907ea.firebaseio.com",
-        projectId: "awesomedoctor-907ea",
-        storageBucket: "awesomedoctor-907ea.appspot.com",
-        messagingSenderId: "563734361620"
-    };
-    firebase.initializeApp(config);
+    // // Initialize Firebase
+ var config = {
+    apiKey: "AIzaSyCZFgxlm7OYDtYudao20tc-24xjNhnPUa8",
+    authDomain: "awesomedoctor-907ea.firebaseapp.com",
+    databaseURL: "https://awesomedoctor-907ea.firebaseio.com",
+    projectId: "awesomedoctor-907ea",
+    storageBucket: "awesomedoctor-907ea.appspot.com",
+    messagingSenderId: "563734361620"
+  };
+  firebase.initializeApp(config);
 
-    var database = firebase.database();
-
-    // Button for adding Trains
-    $("#searchBtn").on("click", function() {
-
-        // Grabs user input and assign to variables
-        var location = $("#location-input").val().trim();
-        var symptoms = $("#symptoms-input").val().trim();
-        var distanceFromLocation = $(".materials-icons").val().trim();
-
-
-        // Test for variables entered
-        console.log(location);
-        console.log(symptoms);
-        console.log(distanceFromLocation);
-
-
-        // pushing info to firebase and storing it
-        firebase.database().ref().push({
-            location: location,
-            symptoms: symptoms,
-            distanceFromLocation: distanceFromLocation,
-        })
-
-        // clear text-boxes
-        $("#location-input").val("");
-        $("#symptoms-input").val("");
-        $(".materials-icons").val("");
-
-
-        // Prevents page from refreshing
-        // return false;
+  // Create a variable to reference the database.
+  var database = firebase.database();
+  // Initial Values
+  var specialist = "";
+  var location = "";
+  var distanceFromYou = 0;
+  
+  // Capture Button Click
+  $("#searchBtn").on("click", function(event) {
+    event.preventDefault();
+    // Grabbed values from text boxes
+    specialist = $("#specialties-input").val().trim();
+    location = $("#location-input").val().trim();
+    distanceFromYou = $("#distanceAway").val().trim();
+    
+    // Code for handling the push
+    database.ref().push({
+      specialist: specialist,
+      location: location,
+      distance: distanceFromYou,
+      
+      dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
-    firebase.database().ref().on("child_added", function(childSnapshot, prevChildKey) {
-
-        console.log(childSnapshot.val());
-        console.log(location);
-        console.log(symptoms);
-    });
-
-
+  });
+  // Firebase watcher + initial loader + order/limit HINT: .on("child_added"
+  database.ref().orderByChild("date").limitToLast(1).on("child_added", function(snapshot) {
+    // storing the snapshot.val() in a variable for convenience
+    var sv = snapshot.val();
+    // Console.loging the last user's data
+    console.log(sv.specialist);
+    console.log(sv.location);
+    console.log(sv.distance);
+   
+    // Change the HTML to reflect
+    $("#specialties-input").text(sv.specialist);
+    $("#location-input").text(sv.location);
+    $("#distanceAway").text(sv.distance);
+    $
+    // Handle the errors
+  }, function(errorObject) {
+    console.log("Errors handled: " + errorObject.code);
+  });
+    
     
 
     // result page
@@ -61,7 +64,7 @@ $(document).ready(function() {
 
     // doctor api
     var doctorApi = "bbc8405334e9bfa31c8a02401fdacfd6";
-    var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&skip=2&limit=100&user_key=' + doctorApi;
+    var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&skip=2&limit=10&user_key=' + doctorApi;
 
     var doctorArray = [];
 

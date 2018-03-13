@@ -64,20 +64,14 @@
                         <label for="location-input">Location</label>
                     </div>
                     <div class="input-field col s3">
-                        <i class="material-icons prefix">add_location</i>
-                        <select>
-                                <option value="" disabled selected>Distance from you:</option>
-                                <option value="1">5 mi</option>
-                                <option value="2">10 mi</option>
-                                <option value="3">20 mi</option>
-                                <option value="4">25 mi</option>
-                                <option value="5">30 mi</option>
-                            </select>
+                        <i class="material-icons prefix">near_me</i>
+                        <input type="text" id="distanceAway" class="location" name="q" placeholder="(miles)Example: 30" aria-label="Search through site content">
+                        <label for="location-input">Distance From You</label>
                     </div>
                     <div class="col s1">
-                        <a href="results.html" id="search" class="btn-floating btn-large waves-effect waves-panel amber lighten-2"> 
+                        <button id="searchBtn" class="btn-floating btn-large waves-effect waves-panel amber lighten-2"> 
                             <i class="material-icons">search</i>
-                        </a>
+                      </button>
                         <!-- <script>
                         var resultsWindow = window.open("results.html")
                         var homePageWindow = window.open(index.html)

@@ -52,43 +52,27 @@
                 <h5 class="header col s12 light">Find the Doctors You Need, When You Need Them.</h5>
             </div>
             <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s4">
-                        <i class="material-icons prefix">priority_high</i>
-                        <input type="text" id="specialties-input" class="specialty" name="q" placeholder="Example:Cardiologist" aria-label="Search through site content">
-                        <label for="specialties-input">Type of Specialist</label>
-                    </div>
-                    <div class="input-field col s4">
-                        <i class="material-icons prefix">add_location</i>
-                        <input type="text" id="location-input" class="location" name="q" placeholder="Example: Irvine, CA" aria-label="Search through site content">
-                        <label for="location-input">Location</label>
-                    </div>
-                    <div class="input-field col s3">
-                        <i class="material-icons prefix">add_location</i>
-                        <select id='radius'>
-                                <option value="" disabled selected>Distance from you:</option>
-                                <option value="1">5 mi</option>
-                                <option value="2">10 mi</option>
-                                <option value="3">20 mi</option>
-                                <option value="4">25 mi</option>
-                                <option value="5">30 mi</option>
-                            </select>
-                    </div>
-                    <div class="col s1">
-                        <a href="results.html" id="search" class="btn-floating btn-large waves-effect waves-panel amber lighten-2">
-                            <i class="material-icons">search</i>
-                        </a>
-                        <!-- <script>
-                        var resultsWindow = window.open("results.html")
-                        var homePageWindow = window.open(index.html)
-                        $("#search").on("click", function() {
-                            document.write(resultsWindow)
-                        })
-                        $("#search").on("click", function() {
-                            document.write(homePageWindow)
-                        })
-                        </script> -->
-                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <i class="material-icons prefix">priority_high</i>
+                            <input type="text" id="specialties-input" class="specialty" name="q" placeholder="Example:Cardiologist" aria-label="Search through site content">
+                            <label for="specialties-input">Type of Doctor</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <i class="material-icons prefix">add_location</i>
+                            <input type="text" id="location-input" class="location" name="q" placeholder="Example: Irvine, CA" aria-label="Search through site content">
+                            <label for="location-input">Location</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <i class="material-icons prefix">near_me</i>
+                            <input type="text" id="distanceAway" class="location" name="q" placeholder="(miles)Example: 30" aria-label="Search through site content">
+                            <label for="location-input">Distance From You</label>
+                        </div>
+                        <div class="col s1">
+                            <button href="results.html"id="searchBtn" class="btn-floating btn-large waves-effect waves-panel amber lighten-2"> 
+                                <i class="material-icons">search</i>
+                          </button>
+                        </div>
                 </div>
             </form>
             <br>

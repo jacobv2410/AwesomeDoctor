@@ -1,9 +1,9 @@
 {
   "database": {
-    "rules": "index.html"
+    "rules": ""
   },
   "hosting": {
-    "public": "AwesomeDoctor",
+    "public": ".",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -1,4 +1,7 @@
+$(document).ready(function() {
+    "use strict";
 
+<<<<<<< HEAD
     $(document).ready(function() {
         "use strict";
 //  // Initialize Firebase
@@ -67,6 +70,8 @@
     //         console.log(resp)
     //     })
     // }
+=======
+>>>>>>> 2761cb9faa977f2b65a3b26097add6bc967928a8
     /*
     Google map API
     */

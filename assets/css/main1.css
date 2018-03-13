@@ -19,9 +19,11 @@ This one is used for result.html
 .row .col {
     padding: 0.1rem;
 }
+
 #copyright {
     text-align: center;
 }
+
 #navlist .list {
     display: inline;
-    }
+}

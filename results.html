@@ -16,33 +16,33 @@
 <body>
     <!-- Nav -->
     <nav class="light-blue lighten-1" role="navigation">
-            <div class="nav-wrapper container">
-                    <div href="index.html" class="brand-logo">
-                        <span>
+        <div class="nav-wrapper container">
+            <div href="index.html" class="brand-logo">
+                <span>
                             <a href="index.html"><img src="https://fontmeme.com/permalink/180312/556bf846603dee7a5bcf3c595ac4d359.png" alt="quattrocento-font" border="0"></a>   
                             <a href="index.html"><img src="https://fontmeme.com/permalink/180312/95e2d4578b36d9bb5883add027d260d1.png" alt="stardust-adventure-font" border="0"></a>
                             
                         </span>
-                        <!-- <img class='logo' src='assets/css/download.png'> -->
-                        <!-- <class='nav-title '>Awesome Doctor</span> -->
-                    </div>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li>
-                            <a href="#">About Us</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact Us</a>
-                        </li>
-                    </ul>
-                    <ul id="nav-mobile" class="side-nav">
-                        <li>
-                            <a href="#">Navbar Link</a>
-                        </li>
-                    </ul>
-                    <a href="#" data-activates="nav-mobile" class="button-collapse">
-                        <i class="material-icons">menu</i>
-                    </a>
-                </div>
+                <!-- <img class='logo' src='assets/css/download.png'> -->
+                <!-- <class='nav-title '>Awesome Doctor</span> -->
+            </div>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="#">About Us</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav">
+                <li>
+                    <a href="#">Navbar Link</a>
+                </li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
     </nav>
     <br>
     <br>
@@ -51,49 +51,31 @@
     <div class="container">
 
         <div class="row">
-                <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s4">
-                                <i class="material-icons prefix">priority_high</i>
-                                <input type="text" id="specialties-input" class="specialty" name="q" placeholder="Example:Cardiologist" aria-label="Search through site content">
-                        <label for="specialties-input">Type of Specialist</label>
-                            </div>
-                            <div class="input-field col s4">
-                                <i class="material-icons prefix">add_location</i>
-                                <input type="text" id="location-input" class="location" name="q" placeholder="Example: Irvine, CA" aria-label="Search through site content">
-                        <label for="location-input">Location</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <i class="material-icons prefix">add_location</i>
-                                <select>
-                                        <option value="" disabled selected>Distance from you:</option>
-                                        <option value="1">5 mi</option>
-                                        <option value="2">10 mi</option>
-                                        <option value="3">20 mi</option>
-                                        <option value="4">25 mi</option>
-                                        <option value="5">30 mi</option>
-                                    </select>
-                            </div>
-                            <div class="col s1">
-                                <a href="results.html" id="search" class="btn-floating btn-large waves-effect waves-panel amber lighten-2"> 
-                                    <i class="material-icons">search</i>
-                                </a>
-                                <!-- <script>
-                                var resultsWindow = window.open("results.html")
-                                var homePageWindow = window.open(index.html)
-                                $("#search").on("click", function() {
-                                    document.write(resultsWindow)
-                                })
-                                $("#search").on("click", function() {
-                                    document.write(homePageWindow)
-                                })
-                                </script> -->
-                            </div>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input id="specialty" type="text" class="validate">
+                        <label for="search1">Search 1</label>
                     </div>
-                </form>
-                    <br>
-                    <br>
-        
+                    <div class="input-field col s4">
+                        <input id="location" type="text" class="validate">
+                        <label for="search2">Search 2</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="radius" type="text" class="validate">
+                        <label for="search3">Search 3</label>
+
+                    </div>
+                    <div class="col s1">
+                        <a id="search" class="btn-floating btn-large waves-effect waves-panel amber lighten-2">
+                            <i class="material-icons">search</i>
+                        </a>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <br>
+
         </div>
     </div>
 
@@ -113,7 +95,8 @@
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">Company Bio</h5>
-                    <p class="grey-text text-lighten-4">We are a group of college students that have discovered a need for an easy to use, effective way to find medical proffesionals near you. With Better Doctor we want to share this sytem with you. We hope that you will be able to find the doctors that you need without any hassle and be able to have your medical needs treated in a timely manner.</p>
+                    <p class="grey-text text-lighten-4">We are a group of college students that have discovered a need for an easy to use, effective way to find medical proffesionals near you. With Better Doctor we want to share this sytem with you. We hope that you will be able to find
+                        the doctors that you need without any hassle and be able to have your medical needs treated in a timely manner.</p>
 
 
                 </div>
@@ -135,38 +118,38 @@
                     </ul>
                 </div>
                 <div class="col l3 s12">
-                        <h5 class="white-text">Connect</h5>
-                          <ul id="navlist">
-                            <li class="list">
-                               <h2 class="list">
-                                   <a href="https://www.instagram.com/betterdoctor/">
-                                  <i class="fab fa-instagram" style="padding: 0px"></i>
-                                  </a>
+                    <h5 class="white-text">Connect</h5>
+                    <ul id="navlist">
+                        <li class="list">
+                            <h2 class="list">
+                                <a href="https://www.instagram.com/betterdoctor/">
+                                    <i class="fab fa-instagram" style="padding: 0px"></i>
+                                </a>
                             </h2>
-                              <!-- <a class="white-text" href="#!">Link 1</a> -->
-                          </li>
-                          <li class="list">
-                              <h2 class="list">
-                                  <a href="https://www.facebook.com/BetterDoctor/">
-                                      <i class="fab fa-facebook-square" style="padding:0px"></i>
-                                  </a>
-                              </h2>
-                              <!-- <a class="white-text" href="#!">Link 2</a> -->
-                          </li>
-                          <li class="list">
-                              <a class="white-text" href="#!">Link 3</a>
-                          </li>
-                          <li class="list">
-                              <a class="white-text" href="#!">Link 4</a>
-                          </li>
-                      </ul>
-                  </div>
+                            <!-- <a class="white-text" href="#!">Link 1</a> -->
+                        </li>
+                        <li class="list">
+                            <h2 class="list">
+                                <a href="https://www.facebook.com/BetterDoctor/">
+                                    <i class="fab fa-facebook-square" style="padding:0px"></i>
+                                </a>
+                            </h2>
+                            <!-- <a class="white-text" href="#!">Link 2</a> -->
+                        </li>
+                        <li class="list">
+                            <a class="white-text" href="#!">Link 3</a>
+                        </li>
+                        <li class="list">
+                            <a class="white-text" href="#!">Link 4</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container" id="copyright">
-                    &copy;
-                    <a class="orange-text text-lighten-3" href="index.html">MIKADO 2018</a>
+                &copy;
+                <a class="orange-text text-lighten-3" href="index.html">MIKADO 2018</a>
             </div>
         </div>
     </footer>
@@ -183,155 +166,3 @@
 </body>
 
 </html>
-
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Awesome Doctor</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <!-- Materialize css -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css" /> 
-</head>
-
-    <body> -->
-        <!-- Nav -->
-        <!-- <nav class="light-blue lighten-1" role="navigation">
-            <div class="nav-wrapper container">
-                <a id="logo-container" href="index.html" class="brand-logo">Awesome Doctor</a>
-                <ul class="right hide-on-med-and-down">
-                    <li>
-                        <a href="">Navbar Link</a>
-                    </li>
-                </ul>
-    
-                <ul id="nav-mobile" class="side-nav">
-                    <li>
-                        <a href="#">Navbar Link</a>
-                    </li>
-                </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse">
-                    <i class="material-icons">menu</i>
-                </a>
-            </div>
-        </nav> -->
-        
-        <!-- Form -->
-        <!-- <div class="container">
-            <div id="map"></div>
-
-            <div class="row">
-                <form class="col s12">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">add_location</i>
-                            <input type="text" id="location-input" class="location">
-                            <label for="location-input">Location</label>
-                        </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">priority_high</i>
-                            <input type="text" id="symptoms-input" class="symptoms">
-                            <label for="symptoms-input">condition/symptoms</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix">add_location</i>
-                            <select>
-                                <option value="" disabled selected>Distance from you:</option>
-                                <option value="1">5 mi</option>
-                                <option value="2">10 mi</option>
-                                <option value="3">20 mi</option>
-                                <option value="4">25 mi</option>
-                                <option value="5">30 mi</option>
-                            </select>
-                        </div>
-                        <div class="col s6">
-                            <a href="results.html" id="searchBtn" class="btn-floating btn-large waves-effect waves-panel amber lighten-2"> <i class="material-icons">search</i></a>
-                        </div>
-                    </div>
-                </form>
-            </div>        
-            <br>
-            <br>
-        </div> -->
-
-        
-        <!-- Results -->
-        <!-- <div class="container">
-            <div class="row">
-                <div class="col s12">
-                <ul class="collapsible" id="doctorData" data-collapsible="accordian"></ul>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- Footer -->
-        <!-- <footer class="page-footer amber accent-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">Company Bio</h5>
-                        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would
-                            help support and continue development on this project and is greatly appreciated.</p>
-    
-    
-                    </div>
-                    <div class="col l3 s12">
-                        <h5 class="white-text">Settings</h5>
-                        <ul>
-                            <li>
-                                <a class="white-text" href="#!">Link 1</a>
-                            </li>
-                            <li>
-                                <a class="white-text" href="#!">Link 2</a>
-                            </li>
-                            <li>
-                                <a class="white-text" href="#!">Link 3</a>
-                            </li>
-                            <li>
-                                <a class="white-text" href="#!">Link 4</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col l3 s12">
-                        <h5 class="white-text">Connect</h5>
-                        <ul>
-                            <li>
-                                <a class="white-text" href="#!">Link 1</a>
-                            </li>
-                            <li>
-                                <a class="white-text" href="#!">Link 2</a>
-                            </li>
-                            <li>
-                                <a class="white-text" href="#!">Link 3</a>
-                            </li>
-                            <li>
-                                <a class="white-text" href="#!">Link 4</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <div class="container">
-                </div>
-            </div>
-        </footer> -->
-
-    <!--  Scripts-->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
-    <!-- Materialize JavaScript -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEB-YmeWU9GL9M6Py9llH6Cz1YyXX4F8M&callback=initMap"
-    async defer></script> -->
-    <!-- Firebase Database Link -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-
-</body>
-</html> -->

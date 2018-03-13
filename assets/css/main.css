@@ -28,9 +28,10 @@
 #copyright {
     text-align: center;
 }
+
 #navlist .list {
-display: inline;
-/* list-style-type: none;
+    display: inline;
+    /* list-style-type: none;
 padding-right: 20px;
 float: left; */
 }

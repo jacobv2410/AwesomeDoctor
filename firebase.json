@@ -1,0 +1,13 @@
+{
+  "database": {
+    "rules": "index.html"
+  },
+  "hosting": {
+    "public": "AwesomeDoctor",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -59,7 +59,9 @@ $(document).ready(function() {
 
     // doctor api
     var doctorApi = "bbc8405334e9bfa31c8a02401fdacfd6";
+
     var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773,-122.413,100&skip=2&limit=10&user_key=' + doctorApi;
+
 
     var doctorArray = [];
 
@@ -76,6 +78,7 @@ $(document).ready(function() {
             var title = doctorArray[i].profile.title
             var image = doctorArray[i].profile.image_url
 
+
             // this is an array
             var specialties = convertArrayObjectToString(doctorArray[i].specialties);
 
@@ -90,6 +93,7 @@ $(document).ready(function() {
 
 
         }
+
         // $("#firstEntry").append(firstName, lastName)
     }).catch(function(err) {
         console.error(err);

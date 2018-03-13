@@ -1,5 +1,5 @@
 /*/
-This one is used for result.html
+This one is used for index.html
 */
 
 #map {
@@ -26,4 +26,14 @@ This one is used for result.html
 
 #navlist .list {
     display: inline;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
 }

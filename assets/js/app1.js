@@ -3,6 +3,7 @@ $(document).ready(function() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     $(document).ready(function() {
         "use strict";
 //  // Initialize Firebase
@@ -101,6 +102,8 @@ $(document).ready(function() {
     // }
 =======
 >>>>>>> 2761cb9faa977f2b65a3b26097add6bc967928a8
+=======
+>>>>>>> 150b2707ad7a51154de32f17a0287e20faf51e30
     /*
     Google map API
     */

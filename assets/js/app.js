@@ -1,60 +1,55 @@
 // initializing firebase
 $(document).ready(function() {
 
-    // // Initialize Firebase
- var config = {
-    apiKey: "AIzaSyCZFgxlm7OYDtYudao20tc-24xjNhnPUa8",
-    authDomain: "awesomedoctor-907ea.firebaseapp.com",
-    databaseURL: "https://awesomedoctor-907ea.firebaseio.com",
-    projectId: "awesomedoctor-907ea",
-    storageBucket: "awesomedoctor-907ea.appspot.com",
-    messagingSenderId: "563734361620"
-  };
-  firebase.initializeApp(config);
+    // var config = {
+    //     apiKey: "AIzaSyCZFgxlm7OYDtYudao20tc-24xjNhnPUa8",
+    //     authDomain: "awesomedoctor-907ea.firebaseapp.com",
+    //     databaseURL: "https://awesomedoctor-907ea.firebaseio.com",
+    //     projectId: "awesomedoctor-907ea",
+    //     storageBucket: "awesomedoctor-907ea.appspot.com",
+    //     messagingSenderId: "563734361620"
+    // };
+    // firebase.initializeApp(config);
 
-  // Create a variable to reference the database.
-  var database = firebase.database();
-  // Initial Values
-  var specialist = "";
-  var location = "";
-  var distanceFromYou = 0;
-  
-  // Capture Button Click
-  $("#searchBtn").on("click", function(event) {
-    event.preventDefault();
-    // Grabbed values from text boxes
-    specialist = $("#specialties-input").val().trim();
-    location = $("#location-input").val().trim();
-    distanceFromYou = $("#distanceAway").val().trim();
-    
-    // Code for handling the push
-    database.ref().push({
-      specialist: specialist,
-      location: location,
-      distance: distanceFromYou,
-      
-      dateAdded: firebase.database.ServerValue.TIMESTAMP
-    });
-  });
-  // Firebase watcher + initial loader + order/limit HINT: .on("child_added"
-  database.ref().orderByChild("date").limitToLast(1).on("child_added", function(snapshot) {
-    // storing the snapshot.val() in a variable for convenience
-    var sv = snapshot.val();
-    // Console.loging the last user's data
-    console.log(sv.specialist);
-    console.log(sv.location);
-    console.log(sv.distance);
-   
-    // Change the HTML to reflect
-    $("#specialties-input").text(sv.specialist);
-    $("#location-input").text(sv.location);
-    $("#distanceAway").text(sv.distance);
-    $
-    // Handle the errors
-  }, function(errorObject) {
-    console.log("Errors handled: " + errorObject.code);
-  });
-    
+    // var database = firebase.database();
+
+    // // Button for adding Trains
+    // $("#searchBtn").on("click", function() {
+
+    //     // Grabs user input and assign to variables
+    //     var location = $("#location-input").val().trim();
+    //     var symptoms = $("#symptoms-input").val().trim();
+    //     var distanceFromLocation = $(".materials-icons").val().trim();
+
+
+    //     // Test for variables entered
+    //     console.log(location);
+    //     console.log(symptoms);
+    //     console.log(distanceFromLocation);
+
+
+    //     // pushing info to firebase and storing it
+    //     firebase.database().ref().push({
+    //         location: location,
+    //         symptoms: symptoms,
+    //         distanceFromLocation: distanceFromLocation,
+    //     })
+
+    //     // clear text-boxes
+    //     $("#location-input").val("");
+    //     $("#symptoms-input").val("");
+    //     $(".materials-icons").val("");
+
+
+    //     // Prevents page from refreshing
+    //     // return false;
+    // });
+    // firebase.database().ref().on("child_added", function(childSnapshot, prevChildKey) {
+
+    //     console.log(childSnapshot.val());
+    //     console.log(location);
+    //     console.log(symptoms);
+    // });
 
 
     // result page
@@ -67,8 +62,9 @@ $(document).ready(function() {
 
 
     var doctorArray = [];
-    $('#search').on('click', function () {
-
+    var coordinatesValue = [];
+    $('#search').on('click', function() {
+        coordinatesValue = [];
         // $("#specialty").val("");
         // $("#location").val("");
         // $("#radius").val("");
@@ -79,25 +75,54 @@ $(document).ready(function() {
         specialty = $('#specialty').val().trim();
         location = $('#location').val().trim();
         radius = $('#radius').val().trim();
-        betterDoctor(specialty, location, radius)
-        console.log(specialty)
-        console.log(location)
-        console.log(radius)
+        var geocoder = new google.maps.Geocoder();
+        //var address = "92683";
+
+        geocoder.geocode({ 'address': location }, function(results, status) {
+
+            if (status == google.maps.GeocoderStatus.OK) {
+                var latitude = results[0].geometry.location.lat();
+                var longtitude = results[0].geometry.location.lng();
+                console.log("lat: " + latitude);
+                console.log("long: " + longtitude);
+
+                coordinatesValue.push(latitude, longtitude);
+
+            }
+
+            console.log(coordinatesValue);
+
+            betterDoctor(specialty, coordinatesValue[0], coordinatesValue[1], radius)
+            console.log(specialty)
+            console.log(location)
+            console.log(radius)
+
+        })
     })
 
 
-    function betterDoctor(specialty, location, radius) {
+    function betterDoctor(specialty, lat, long, radius) {
         // doctor api
         var doctorApi = "bbc8405334e9bfa31c8a02401fdacfd6";
-        var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?query=' + specialty + '&location=' + location + ',' + radius + '&skip=2&limit=10&user_key=' + doctorApi;
-        // var resource_url = 'https://api.betterdoctor.com/2016-03-01/doctors?specialty_uid=' + specialty + '&location=' + location + '%2C' + radius + '&skip=0&limit=10&user_key=' + doctorApi;
+        var resource_url = "https://api.betterdoctor.com/2016-03-01/doctors?query=" + specialty + "&location=" + lat + "," + long + "," + radius + "&skip=2&limit=10&user_key=" + doctorApi;
+
+
 
         $.ajax({
             url: resource_url,
             method: 'GET'
-        }).then(function (resp) {
+        }).then(function(resp) {
             console.log(resp);
+
             doctorArray = resp.data;
+            console.log(doctorArray);
+
+            console.log("lat: " + coordinatesValue[0]);
+            console.log("long: " + coordinatesValue[1]);
+
+            //var row = "<div class='row'><div class='col s12'><ul class='collapsible' id='doctorData' data-collapsible='accordian'></ul></div></div>"
+
+            // $(".container").prepend(row);
 
             for (var i = 0; i < doctorArray.length; i++) {
                 var firstName = doctorArray[i].profile.first_name
@@ -122,11 +147,12 @@ $(document).ready(function() {
             }
 
             // $("#firstEntry").append(firstName, lastName)
-        }).catch(function (err) {
+        }).catch(function(err) {
             console.error(err);
         })
     };
-    $(document).on("click", ".item", function () {
+
+    $(document).on("click", ".item", function() {
         var index = $(this).attr("data-index");
         var bio = doctorArray[index].profile.bio;
         var content = $(this).find(".bio");

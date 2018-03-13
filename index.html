@@ -10,13 +10,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 
 <body>
     <nav class="light-blue lighten-1" role="navigation">
         <div class="nav-wrapper container">
-            <div href="#" class="brand-logo">
-                <img class='logo' src='assets/css/download.png'>
+            <div href="index.html" class="brand-logo">
+                <span>
+                    <a href="index.html"><img src="https://fontmeme.com/permalink/180312/556bf846603dee7a5bcf3c595ac4d359.png" alt="quattrocento-font" border="0"></a>   
+                    <a href="index.html"><img src="https://fontmeme.com/permalink/180312/95e2d4578b36d9bb5883add027d260d1.png" alt="stardust-adventure-font" border="0"></a>
+                    
+                </span>
+                <!-- <img class='logo' src='assets/css/download.png'> -->
                 <!-- <class='nav-title '>Awesome Doctor</span> -->
             </div>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -47,19 +53,17 @@
             </div>
             <form class="col s12">
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s4">
                         <i class="material-icons prefix">priority_high</i>
-                        <input type="text" id="symptoms-input" class="symptoms">
-                        <label for="symptoms-input">condition/symptoms</label>
+                        <input type="text" id="specialties-input" class="specialty" name="q" placeholder="Example:Cardiologist" aria-label="Search through site content">
+                        <label for="specialties-input">Type of Specialist</label>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s4">
                         <i class="material-icons prefix">add_location</i>
-                        <input type="text" id="location-input" class="location">
+                        <input type="text" id="location-input" class="location" name="q" placeholder="Example: Irvine, CA" aria-label="Search through site content">
                         <label for="location-input">Location</label>
                     </div>
-                    <div class="input-field col s5">
+                    <div class="input-field col s3">
                         <i class="material-icons prefix">add_location</i>
                         <select id='radius'>
                                 <option value="" disabled selected>Distance from you:</option>
@@ -71,7 +75,19 @@
                             </select>
                     </div>
                     <div class="col s1">
-                        <a href="results.html" id="search" class="btn-floating btn-large waves-effect waves-panel amber lighten-2"> <i class="material-icons">search</i></a>
+                        <a href="results.html" id="search" class="btn-floating btn-large waves-effect waves-panel amber lighten-2">
+                            <i class="material-icons">search</i>
+                        </a>
+                        <!-- <script>
+                        var resultsWindow = window.open("results.html")
+                        var homePageWindow = window.open(index.html)
+                        $("#search").on("click", function() {
+                            document.write(resultsWindow)
+                        })
+                        $("#search").on("click", function() {
+                            document.write(homePageWindow)
+                        })
+                        </script> -->
                     </div>
                 </div>
             </form>
@@ -80,22 +96,124 @@
 
         </div>
     </div>
-    <footer class="page-footer copyright orange">
-        <div class="row">
-            <div class="container">
-                &copy;
-                <a class="orange-text text-lighten-3" href="http://materializecss.com">MIKADO 2018</a>
-            </div>
-        </div>
-    </footer>
+    <div class="container">
+        <div class="section">
 
-    <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <!-- Materialize JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="assets/js/app.js"></script>
-    <!-- Firebase Database Link -->
-    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="material-icons">healing</i>
+                        </h2>
+                        <h5 class="center">Your Health is #1</h5>
+
+                        <p class="light">To us, your health is the #1 thing we are concerned about. That is why we have created this database of so many medical professionals. We want you to be the in the best shape you can possibly be, and if you do happen to hit some
+                            bumps in the road, we hope that by finding the right doctor, your healing is as quick as it can possibly be.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="material-icons">group</i>
+                        </h2>
+                        <h5 class="center">A+ Group of Medical Proffesionals</h5>
+
+                        <p class="light">Anytime a group of people come together of people come together and work cohesively as a team, great things can happen. That is precisely what has happened with Better Doctor. Our extensive team of doctors have all worked with
+                            us to provide their information, so that we may in turn provide it to you. We implore you to take a gander at our site, and take advantage of a large group of great people that are here to help you live a happy and healthy
+                            life.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="material-icons">local_hospital</i>
+                        </h2>
+                        <h5 class="center">Your Local Medical Expert</h5>
+
+                        <p class="light">While the goal of our site is to help you find your local doctor, you may be out of town and need to find someone in a hurry that you are not familiar with. That is where we come in. Simply input your location and the type of specialist
+                            you are looking for and Voila! You have found the closest and best doctor that can address your needs.</p>
+                    </div>
+                </div>
+            </div>
+            </form>
+            <br>
+            <br>
+
+        </div>
+        <footer class="page-footer orange">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Company Bio</h5>
+                        <p class="grey-text text-lighten-4">We are a group of college students that have discovered a need for an easy to use, effective way to find medical proffesionals near you. With Better Doctor we want to share this sytem with you. We hope that you will be able to
+                            find the doctors that you need without any hassle and be able to have your medical needs treated in a timely manner.</p>
+
+
+                    </div>
+                    <div class="col l3 s12">
+                        <h5 class="white-text">Settings</h5>
+                        <ul>
+                            <li>
+                                <a class="white-text" href="#!">Link 1</a>
+
+                            </li>
+                            <li>
+                                <a class="white-text" href="#!">Link 2</a>
+                            </li>
+                            <li>
+                                <a class="white-text" href="#!">Link 3</a>
+                            </li>
+                            <li>
+                                <a class="white-text" href="#!">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l3 s12">
+                        <h5 class="white-text">Connect</h5>
+                        <ul id="navlist">
+                            <li class="list">
+                                <h2 class="list">
+                                    <a href="https://www.instagram.com/betterdoctor/">
+                                        <i class="fab fa-instagram" style="padding: 0px"></i>
+                                    </a>
+                                </h2>
+                                <!-- <a class="white-text" href="#!">Link 1</a> -->
+                            </li>
+                            <li class="list">
+                                <h2 class="list">
+                                    <a href="https://www.facebook.com/BetterDoctor/">
+                                        <i class="fab fa-facebook-square" style="padding:0px"></i>
+                                    </a>
+                                </h2>
+                                <!-- <a class="white-text" href="#!">Link 2</a> -->
+                            </li>
+                            <li class="list">
+                                <a class="white-text" href="#!">Link 3</a>
+                            </li>
+                            <li class="list">
+                                <a class="white-text" href="#!">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container" id="copyright">
+                    &copy;
+                    <a class="orange-text text-lighten-3" href="index.html">MIKADO 2018</a>
+                </div>
+            </div>
+        </footer>
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <!-- Materialize JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="assets/js/app.js"></script>
+        <!-- Firebase Database Link -->
+        <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 
 </body>
 

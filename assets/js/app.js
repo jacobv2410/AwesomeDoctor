@@ -1,6 +1,6 @@
 // initializing firebase
 $(document).ready(function() {
-
+    $('#doctorData').hide()
     // var config = {
     //     apiKey: "AIzaSyCZFgxlm7OYDtYudao20tc-24xjNhnPUa8",
     //     authDomain: "awesomedoctor-907ea.firebaseapp.com",
@@ -64,6 +64,7 @@ $(document).ready(function() {
     var doctorArray = [];
     var coordinatesValue = [];
     $('#search').on('click', function() {
+        $('#doctorData').show()
         coordinatesValue = [];
         // $("#specialty").val("");
         // $("#location").val("");

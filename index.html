@@ -15,158 +15,163 @@
 
 <body>
     <!-- Nav -->
-    <nav class="light-blue accent-3" role="navigation" class=>
-        <div class="nav-wrapper container">
-            <!-- <a href="#!" class="brand-logo">Awesome Doctor</a> -->
-            <!-- <div href="index.html" class="brand-logo"> -->
-                <span>
-                            <a href="index.html"><img src="https://fontmeme.com/permalink/180312/556bf846603dee7a5bcf3c595ac4d359.png" alt="quattrocento-font" border="0"></a>   
-                            <a href="index.html"><img src="https://fontmeme.com/permalink/180312/95e2d4578b36d9bb5883add027d260d1.png" alt="stardust-adventure-font" border="0"></a>
-                            
-                        </span>
-                <!-- <img class='logo' src='assets/css/download.png'> -->
-                <!-- <div class="nav-content">
-                    <span class="nav-title">Where Healing Begins</span>
-                </div> -->
-            </div>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li>
-                    <a href="#">About Us</a>
-                </li>
-                <li>
-                    <a href="#">Contact Us</a>
-                </li>
-            </ul>
-            <ul id="nav-mobile" class="side-nav">
-                <li>
-                    <a href="#">Navbar Link</a>
-                </li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse">
-                <i class="material-icons">menu</i>
-            </a>
-        </div>
-    </nav>
-
-    <div class="section no-pad-bot" id="index-banner">
-        <div class="container">
-            <br>
-            <br>
-            <h2 class="header center orange-text">Better Doctors.
-                <span style="color:blueviolet">Better Health.</span> Better You.</h2>
-            <div class="row center">
-                <h5 class="header col s12 bold">Find the Doctors You Need, When You Need Them.</h5>
-            </div>
-    <!-- Form -->
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s4 ">
-                        <i class="material-icons prefix">priority_high</i>
-                        <!-- <input type="text" id="specialty" class="specialty" name="q" placeholder="Example: Cardiologist" aria-label="Search through site content"> -->
-                        <!-- <label for="specialties-input">Type of Specialist</label> -->
-                        <select id='specialty'>
-                            <option value="" disabled selected>Type of Specialist:</option>
-                            <option value="Cardiologist">Cardiologist</option>
-                            <option value="Dentist">Dentist</option>
-                            <option value="Dermatologist">Dermatologist</option>
-                            <option value="Endocrinologist">Endocrinologist</option>
-                            <option value="Family Medicine">Family Medicine</option>
-                            <option value="Gastroenterologist">Gastroenterologist</option>
-                            <option value="Internal Medicine">Internal Medicine</option>
-                            <option value="Oncologist">Oncologist</option>
-                            <option value="Orthodontist">Orthodontist</option>
-                            <option value="Pediatrician">Pediatrician</option>
-                            <option value="Podiatrist">Podiatrist</option>
-                            <option value="Surgeon">Surgeon</option>
-                        </select>
-                    </div>
-                    <div class="input-field col s4 ">
-                        <i class="material-icons prefix">add_location</i>
-                        <input type="text" id="location" class="location" name="q" placeholder="Example: 92606" aria-label="Search through site content">
-                        <label for="location-input">Location</label>
-                    </div>
-                    <div class="input-field col s3 ">
-                        <i class="material-icons prefix">near_me</i>
-                        <input id="radius" class="radius" type="text" class="validate">
-                        <label for="search3">Distance from you (mi)</label>
-                    </div>
-                    <div class="col s1">
-                        <a id="search" class="btn-floating btn-large waves-effect waves-panel amber lighten-1">
-                            <i class="material-icons">search</i>
+    <header>
+            <nav class="light-blue accent-3" role="navigation" class=>
+                    <div class="nav-wrapper container">
+                        <!-- <a href="#!" class="brand-logo">Awesome Doctor</a> -->
+                        <!-- <div href="index.html" class="brand-logo"> -->
+                            <span>
+                                        <a href="index.html"><img src="https://fontmeme.com/permalink/180312/556bf846603dee7a5bcf3c595ac4d359.png" alt="quattrocento-font" border="0"></a>   
+                                        <a href="index.html"><img src="https://fontmeme.com/permalink/180312/95e2d4578b36d9bb5883add027d260d1.png" alt="stardust-adventure-font" border="0"></a>
+                                        
+                                    </span>
+                            <!-- <img class='logo' src='assets/css/download.png'> -->
+                            <!-- <div class="nav-content">
+                                <span class="nav-title">Where Healing Begins</span>
+                            </div> -->
+                        </div>
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li>
+                                <a href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact Us</a>
+                            </li>
+                        </ul>
+                        <ul id="nav-mobile" class="side-nav">
+                            <li>
+                                <a href="#">Navbar Link</a>
+                            </li>
+                        </ul>
+                        <a href="#" data-activates="nav-mobile" class="button-collapse">
+                            <i class="material-icons">menu</i>
                         </a>
                     </div>
+                </nav>
+    </header>
+    
 
-            <div class="row">
-                <div class="col s12">
-                    <ul class="collapsible" id="doctorData" data-collapsible="accordian"></ul>
-                  
+    <main>
+            <div class="section no-pad-bot" id="index-banner">
+                    <div class="container">
+                        <br>
+                        <br>
+                        <h2 class="header center orange-text">Better Doctors.
+                            <span style="color:blueviolet">Better Health.</span> Better You.</h2>
+                        <div class="row center">
+                            <h5 class="header col s12 bold">Find the Doctors You Need, When You Need Them.</h5>
+                        </div>
+                <!-- Form -->
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s4 ">
+                                    <i class="material-icons prefix">priority_high</i>
+                                    <!-- <input type="text" id="specialty" class="specialty" name="q" placeholder="Example: Cardiologist" aria-label="Search through site content"> -->
+                                    <!-- <label for="specialties-input">Type of Specialist</label> -->
+                                    <select id='specialty'>
+                                        <option value="" disabled selected>Type of Specialist:</option>
+                                        <option value="Cardiologist">Cardiologist</option>
+                                        <option value="Dentist">Dentist</option>
+                                        <option value="Dermatologist">Dermatologist</option>
+                                        <option value="Endocrinologist">Endocrinologist</option>
+                                        <option value="Family Medicine">Family Medicine</option>
+                                        <option value="Gastroenterologist">Gastroenterologist</option>
+                                        <option value="Internal Medicine">Internal Medicine</option>
+                                        <option value="Oncologist">Oncologist</option>
+                                        <option value="Orthodontist">Orthodontist</option>
+                                        <option value="Pediatrician">Pediatrician</option>
+                                        <option value="Podiatrist">Podiatrist</option>
+                                        <option value="Surgeon">Surgeon</option>
+                                    </select>
+                                </div>
+                                <div class="input-field col s4 ">
+                                    <i class="material-icons prefix">add_location</i>
+                                    <input type="text" id="location" class="location" name="q" placeholder="Example: 92606" aria-label="Search through site content">
+                                    <label for="location-input">Location</label>
+                                </div>
+                                <div class="input-field col s3 ">
+                                    <i class="material-icons prefix">near_me</i>
+                                    <input id="radius" class="radius" type="text" class="validate">
+                                    <label for="search3">Distance from you (mi)</label>
+                                </div>
+                                <div class="col s1">
+                                    <a id="search" class="btn-floating btn-large waves-effect waves-panel amber lighten-1">
+                                        <i class="material-icons">search</i>
+                                    </a>
+                                </div>
+            
+                        <div class="row">
+                            <div class="col s12">
+                                <ul class="collapsible" id="doctorData" data-collapsible="accordian"></ul>
+                              
+                            </div>
+                        </div>
+            
+                    </div>
                 </div>
-            </div>
-
-        </div>
-
-
-
+                <div class="container">
+                        <div class="section">
+                
+                        <!--   Icon Section   -->
+                        <div class="row">
+                            <div class="col s12 m4">
+                                <div class="icon-block">
+                                    <h2 class="center light-blue-text">
+                                        <i class="material-icons">healing</i>
+                                    </h2>
+                                    <h5 class="center">Your Health is #1</h5>
+                
+                                    <p class="light">To us, your health is the #1 thing we are concerned about. That is why we have created this database
+                                        of so many medical professionals. We want you to be the in the best shape you can possibly be, and
+                                        if you do happen to hit some bumps in the road, we hope that by finding the right doctor, your healing
+                                        is as quick as it can possibly be.</p>
+                                </div>
+                            </div>
+                
+                            <div class="col s12 m4">
+                                <div class="icon-block">
+                                    <h2 class="center light-blue-text">
+                                        <i class="material-icons">group</i>
+                                    </h2>
+                                    <h5 class="center">A+ Group of Medical Proffesionals</h5>
+                
+                                    <p class="light">Anytime a group of people come together of people come together and work cohesively as a team, great
+                                        things can happen. That is precisely what has happened with Better Doctor. Our extensive team of
+                                        doctors have all worked with us to provide their information, so that we may in turn provide it to
+                                        you. We implore you to take a gander at our site, and take advantage of a large group of great people
+                                        that are here to help you live a happy and healthy life.
+                                    </p>
+                                </div>
+                            </div>
+                
+                            <div class="col s12 m4">
+                                <div class="icon-block">
+                                    <h2 class="center light-blue-text">
+                                        <i class="material-icons">local_hospital</i>
+                                    </h2>
+                                    <h5 class="center">Your Local Medical Expert</h5>
+                
+                                    <p class="light">While the goal of our site is to help you find your local doctor, you may be out of town and need to
+                                        find someone in a hurry that you are not familiar with. That is where we come in. Simply input your
+                                        location and the type of specialist you are looking for and Voila! You have found the closest and
+                                        best doctor that can address your needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                        <br>
+                        <br>
+                      
+                    </div>
     </main>
 
+    
 
 
 
-    <div class="container">
-        <div class="section">
 
-        <!--   Icon Section   -->
-        <div class="row">
-            <div class="col s12 m4">
-                <div class="icon-block">
-                    <h2 class="center light-blue-text">
-                        <i class="material-icons">healing</i>
-                    </h2>
-                    <h5 class="center">Your Health is #1</h5>
-
-                    <p class="light">To us, your health is the #1 thing we are concerned about. That is why we have created this database
-                        of so many medical professionals. We want you to be the in the best shape you can possibly be, and
-                        if you do happen to hit some bumps in the road, we hope that by finding the right doctor, your healing
-                        is as quick as it can possibly be.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block">
-                    <h2 class="center light-blue-text">
-                        <i class="material-icons">group</i>
-                    </h2>
-                    <h5 class="center">A+ Group of Medical Proffesionals</h5>
-
-                    <p class="light">Anytime a group of people come together of people come together and work cohesively as a team, great
-                        things can happen. That is precisely what has happened with Better Doctor. Our extensive team of
-                        doctors have all worked with us to provide their information, so that we may in turn provide it to
-                        you. We implore you to take a gander at our site, and take advantage of a large group of great people
-                        that are here to help you live a happy and healthy life.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block">
-                    <h2 class="center light-blue-text">
-                        <i class="material-icons">local_hospital</i>
-                    </h2>
-                    <h5 class="center">Your Local Medical Expert</h5>
-
-                    <p class="light">While the goal of our site is to help you find your local doctor, you may be out of town and need to
-                        find someone in a hurry that you are not familiar with. That is where we come in. Simply input your
-                        location and the type of specialist you are looking for and Voila! You have found the closest and
-                        best doctor that can address your needs.</p>
-                </div>
-            </div>
-        </div>
-        </form>
-        <br>
-        <br>
-      
-    </div>
+    
     <!-- Footer -->
     <footer class="page-footer amber accent-3">
         <div class="container">

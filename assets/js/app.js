@@ -159,7 +159,19 @@ $(document).ready(function() {
         var content = $(this).find(".bio");
         // content.css("color", "red");
 
+        
+        
+
+        //debugger
+        var address = getOfficeAddress(doctorArray[index].practices[0]);
+        // debugger
+        var numbers = displayContactNumbers(doctorArray[index].practices[0].phones);
+
         content.text(bio);
+
+        content.append(address, numbers);
+
+
 
         // add google map in here
 
@@ -205,6 +217,30 @@ $(document).ready(function() {
         }
 
         return value.join(', ');
+    }
+
+    function displayContactNumbers(obj){
+        var numbers = "";
+        for(var i = 0; i < obj.length; i++){
+            numbers += "<p class='contac-numbers center'>" + obj[i].type + ": " + obj[i].number + "</p>";            
+        }
+        
+        return numbers;
+        
+    }
+
+    function getOfficeAddress(obj){
+        var address = "<p class ='center'>";
+        address += obj.visit_address.street + ", ";
+        address += obj.visit_address.street2 != undefined ? obj.visit_address.street2 + ", " : "";
+        address += obj.visit_address.city + ", ";
+        address += obj.visit_address.state + " ";
+        address += obj.visit_address.zip;
+        address += "</p>";
+
+        return address;
+        //console.log(address);
+
     }
 
 });

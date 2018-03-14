@@ -125,6 +125,14 @@ label{
     text-transform: capitalize;
 }
 
+.social-icons{
+    font-size: 4em;
+}
+
+#social-links{
+    text-align: right;
+}
+
 .row .col {
     padding: 0.1rem;
 }

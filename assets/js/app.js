@@ -72,7 +72,7 @@ $(document).ready(function() {
 
 
 
-        specialty = $('#specialty').val().trim();
+        specialty = $('#specialty').val();
         location = $('#location').val().trim();
         radius = $('#radius').val().trim();
         var geocoder = new google.maps.Geocoder();
@@ -120,9 +120,6 @@ $(document).ready(function() {
             console.log("lat: " + coordinatesValue[0]);
             console.log("long: " + coordinatesValue[1]);
 
-            //var row = "<div class='row'><div class='col s12'><ul class='collapsible' id='doctorData' data-collapsible='accordian'></ul></div></div>"
-
-            // $(".container").prepend(row);
 
             for (var i = 0; i < doctorArray.length; i++) {
                 var firstName = doctorArray[i].profile.first_name

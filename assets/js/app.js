@@ -146,10 +146,6 @@ $(document).ready(function() {
         console.log(bio);
         contacts += address + "<br>" + numbers;
         contacts += "</div>";
-<<<<<<< HEAD
-        content.empty();
-=======
->>>>>>> 7a2cf201d38eeefe42c4c84e75303a8feff35404
         content.append(bio, contacts);        
         
         // add google map in here

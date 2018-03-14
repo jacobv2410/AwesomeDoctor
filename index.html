@@ -7,7 +7,7 @@
     <title>Awesome Doctor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Materialize css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main1.css" />
     <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
@@ -70,7 +70,8 @@
                     <form class="col s12">
                         <div class="row" id="input">
                             <div class="input-field col s4 ">
-                                <i class="material-icons prefix">priority_high</i>
+
+                                <i class="small material-icons prefix">priority_high</i>
                                 <!-- <input type="text" id="specialty" class="specialty" name="q" placeholder="Example: Cardiologist" aria-label="Search through site content"> -->
                                 <!-- <label for="specialties-input">Type of Specialist</label> -->
                                 <select id='specialty' class="specialty yellow lighten-4 validate">
@@ -89,15 +90,15 @@
                                     <option value="Surgeon">Surgeon</option>
                                 </select>
                             </div>
-                            <div class="input-field col s4">
-                                <i class="material-icons prefix">add_location</i>
-                                <input type="text" id="location" class="location yellow lighten-4 validate" name="q" placeholder="Example: 92606" aria-label="Search through site content">
-                                <label for="location-input">Location</label>
-                            </div>
                             <div class="input-field col s3">
-                                <i class="material-icons prefix">near_me</i>
-                                <input id="radius" class="radius yellow lighten-4 validate" type="text">
-                                <label for="search3">Distance from you (mi)</label>
+                                <i class="small material-icons prefix">add_location</i>
+                                <input type="text" id="location" class="location yellow lighten-4 validate" name="q" placeholder="Example: 92606" aria-label="Search through site content">
+                                <label for="location">Location</label>
+                            </div>
+                            <div class="input-field col s4">
+                                <i class="small material-icons prefix">near_me</i>
+                                <input id="radius" class="radius yellow lighten-4 validate" type="text" placeholder="Distance from you (mile)">
+                                <label for="radius"></label>
                             </div>
                             <div class="col s1">
                                 <a id="search" class="btn floating btn-large waves-effect waves-panel amber lighten-1">

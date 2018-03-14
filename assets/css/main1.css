@@ -2,10 +2,10 @@
 This one is used for index.html
 */
 
-body {
+/* body {
     background-image: url(../images/medical.jpg)
     opacity=.5;
-}
+} */
 
 ::placeholder{
     color: darkgray;
@@ -107,6 +107,17 @@ label{
 
 #intro {
     margin: 0;
+}
+
+.light{
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: justify;
+    font-weight: 550;
+}
+
+.title{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
 }
 
 #contact-info{

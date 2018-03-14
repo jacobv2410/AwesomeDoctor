@@ -13,32 +13,32 @@ $(document).ready(function() {
 
     // var database = firebase.database();
 
-    // // Button for adding Trains
-    // $("#searchBtn").on("click", function() {
+    // // Button for appending search to database
+    // $("#search").on("click", function() {
 
     //     // Grabs user input and assign to variables
-    //     var location = $("#location-input").val().trim();
-    //     var symptoms = $("#symptoms-input").val().trim();
-    //     var distanceFromLocation = $(".materials-icons").val().trim();
+    //     var specialist = $("#specialty").val().trim();
+    //     // var location = $("#location").val().trim();
+    //     var radius = $("#radius").val().trim();
 
 
     //     // Test for variables entered
-    //     console.log(location);
-    //     console.log(symptoms);
-    //     console.log(distanceFromLocation);
+    //     console.log(specialty);
+    //     // console.log(location);
+    //     console.log(radius);
 
 
     //     // pushing info to firebase and storing it
     //     firebase.database().ref().push({
-    //         location: location,
-    //         symptoms: symptoms,
-    //         distanceFromLocation: distanceFromLocation,
+    //         specialty: specialty,
+    //         // location: location,
+    //         radius: radius,
     //     })
 
     //     // clear text-boxes
-    //     $("#location-input").val("");
-    //     $("#symptoms-input").val("");
-    //     $(".materials-icons").val("");
+    //     $("#specialty").val("");
+    //     // $("#location").val("");
+    //     $("#radius").val("");
 
 
     //     // Prevents page from refreshing
@@ -47,8 +47,9 @@ $(document).ready(function() {
     // firebase.database().ref().on("child_added", function(childSnapshot, prevChildKey) {
 
     //     console.log(childSnapshot.val());
-    //     console.log(location);
-    //     console.log(symptoms);
+    //     console.log(specialty);
+    //     // console.log(location);
+    //     console.log(radius)
     // });
 
 
@@ -143,7 +144,7 @@ $(document).ready(function() {
 
             }
 
-            // $("#firstEntry").append(firstName, lastName)
+           
         }).catch(function(err) {
             console.error(err);
         })

@@ -44,13 +44,16 @@ body {
 #navlist .list {
     display: inline;
 }
-
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-}
+  }
 
-main {
+  main {
     flex: 1 0 auto;
-}
+  }
+      
+  #connect {
+      padding-left: 130px;
+  }

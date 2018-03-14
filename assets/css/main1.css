@@ -150,10 +150,10 @@ body {
     flex-direction: column;
   }
 
-  main {
-    flex: 1 0 auto;
-  }
-      
-  #connect {
-      padding-left: 130px;
-  }
+main {
+  flex: 1 0 auto;
+}
+
+#connect {
+    padding-left: 130px;
+}

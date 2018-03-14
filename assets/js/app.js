@@ -120,11 +120,6 @@ $(document).ready(function() {
                 // this is an array
                 var specialties = convertArrayObjectToString(doctorArray[i].specialties);                
                 var li = $("<li class='item' data-index='" + i + "'><div class='collapsible-header title-header'>" + firstName + " " + lastName + ", " + title + " - Specialities: " + specialties + "</div><div class='collapsible-body body-item'><div class='row'><div class='col m2 s12'><img class='responsive-img avatar' src='" + image + "'></div><div class='col m10 s12 bio'></div></div><div id='map'></div></div>");
-
-                
-
-
-
                 $("#doctorData").append(li);
             }
 
@@ -140,7 +135,6 @@ $(document).ready(function() {
 
         var address = getOfficeAddress(doctorArray[index].practices[0]);        
         var numbers = displayContactNumbers(doctorArray[index].practices[0].phones);
-
         console.log("address: " + address);
         console.log("numbers: " + numbers);
         
@@ -148,8 +142,6 @@ $(document).ready(function() {
         var contacts = "<div id='contact-info'>";        
         contacts += address + "<br>" + numbers;
         contacts += "</div>";
-
-
         content.append(bio, contacts);        
         
         // add google map in here

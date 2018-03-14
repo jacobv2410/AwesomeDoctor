@@ -72,7 +72,7 @@ $(document).ready(function() {
 
 
 
-        specialty = $('#specialty').val().trim();
+        specialty = $('#specialty').val();
         location = $('#location').val().trim();
         radius = $('#radius').val().trim();
         var geocoder = new google.maps.Geocoder();

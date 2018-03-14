@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main1.css" />
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
 </head>
 
 <body>
@@ -73,7 +73,7 @@
                                 <i class="material-icons prefix">priority_high</i>
                                 <!-- <input type="text" id="specialty" class="specialty" name="q" placeholder="Example: Cardiologist" aria-label="Search through site content"> -->
                                 <!-- <label for="specialties-input">Type of Specialist</label> -->
-                                <select id='specialty' class="specialty yellow lighten-4">
+                                <select id='specialty' class="specialty yellow lighten-4 validate">
                                     <option value="" disabled selected>Type of Specialist:</option>
                                     <option value="Cardiologist">Cardiologist</option>
                                     <option value="Dentist">Dentist</option>
@@ -91,12 +91,12 @@
                             </div>
                             <div class="input-field col s4">
                                 <i class="material-icons prefix">add_location</i>
-                                <input type="text" id="location" class="location yellow lighten-4" name="q" placeholder="Example: 92606" aria-label="Search through site content">
+                                <input type="text" id="location" class="location yellow lighten-4 validate" name="q" placeholder="Example: 92606" aria-label="Search through site content">
                                 <label for="location-input">Location</label>
                             </div>
                             <div class="input-field col s3">
                                 <i class="material-icons prefix">near_me</i>
-                                <input id="radius" class="radius yellow lighten-4" type="text" class="validate">
+                                <input id="radius" class="radius yellow lighten-4 validate" type="text">
                                 <label for="search3">Distance from you (mi)</label>
                             </div>
                             <div class="col s1">
@@ -241,6 +241,7 @@
 
 
     <!--  Scripts-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>

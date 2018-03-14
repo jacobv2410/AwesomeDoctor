@@ -95,9 +95,20 @@ body {
 }
 
 .bio {
+    font-family: 'Cabin', sans-serif;
+    font-size: 18px;
     text-align: justify;
     padding-left: 0;
     padding-right: 0;
+}
+
+#intro {
+    margin: 0;
+}
+
+#contact-info{
+    text-align: center;
+    text-transform: capitalize;
 }
 
 .row .col {

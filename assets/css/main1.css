@@ -2,6 +2,23 @@
 This one is used for index.html
 */
 
+body {
+    background-image: url(../images/medical.jpg)
+    /* opacity=.5; */
+}
+
+.brand-logo{
+    font: Bodoni MT;
+}
+.nav-title{
+    font-size: 14px;
+}
+.nav-wrapper{
+    margin: 50;
+    /* opacity: 0.5; */
+    /* background-image: url(../images/wood.jpg) */
+}
+
 #map {
     height: 400px;
     width: 100%;
